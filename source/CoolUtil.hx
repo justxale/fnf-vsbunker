@@ -170,8 +170,10 @@ public static function precacheMusic(sound:String, ?library:String = null):Void 
 			var artistPrefix:String = '';
 			switch (song) // Write here your Composer(s)
 			{
-				case 'alteratrocity' | 'fluffy-revenge':
-                    artistPrefix = 'XaleTheCat';
+				case 'cold reception' | '(56709)' | 'last breath' | 'let the fun begin' | 'new friend' | 'this is not a game' | 'wondertasm':
+                    artistPrefix = 'Xale';
+				case 'the key goals of our guests':
+					artistPrefix = 'Yamahearted';
                 default:
 				    artistPrefix = 'Kawai Sprite';
 			}	

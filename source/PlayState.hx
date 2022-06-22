@@ -522,13 +522,14 @@ class PlayState extends MusicBeatState
 		curStage = SONG.stage;
 
         displaySongName = StringTools.replace(songName, '-', ' ');
-		Application.current.window.title = Main.appTitle + ' // ' + /* CoolUtil.getArtist(SONG.song.toLowerCase()) + ' - ' + */ StringTools.replace(SONG.song, '-', ' ');   //i should rewrite getArtist in future - PurSnake
+		trace(SONG.song.toLowerCase());
+		Application.current.window.title = Main.appTitle + ' | ' + CoolUtil.getArtist(SONG.song.toLowerCase()) + ' - ' + StringTools.replace(SONG.song, '-', ' ');   //i should rewrite getArtist in future - PurSnake
 
 		if(SONG.stage == null || SONG.stage.length < 1)
 		{
 			switch (songName)
 			{
-				case 'cold-reception' | 'this-is-not-a-game' | 'new-friend':
+				case 'cold reception' | 'thisis-not-a-game' | 'new friend':
 					curStage = 'alter';
 				default:
 					curStage = 'bar';
@@ -1343,16 +1344,16 @@ for(mod in Paths.getGlobalMods())
 		iconP1.y = healthBarWN.y - 75;
 		iconP1.visible = !ClientPrefs.hideHud;
 		iconP1.alpha = ClientPrefs.healthBarAlpha;
-		add(iconP1);
-
+		
 		iconP2 = new HealthIcon(dad.healthIcon, false);
 		iconP2.y = healthBarWN.y - 75;
 		iconP2.visible = !ClientPrefs.hideHud;
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
+
 		add(iconP2);
+		add(iconP1);
 
-
-                if(!ClientPrefs.hideHud)
+        if(!ClientPrefs.hideHud)
 		for (helem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
 			if (helem != null) {
 				helem.visible = ClientPrefs.visibleHealthbar;
@@ -1387,10 +1388,10 @@ for(mod in Paths.getGlobalMods())
 		judgementCounter.cameras = [camHUD];
 		judgementCounter.screenCenter(Y);
 		judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
-       if(ClientPrefs.showjud) 
-       judgementCounter.visible = !ClientPrefs.hideHud;
-       else
-       judgementCounter.visible = false;
+    	if(ClientPrefs.showjud) 
+    		judgementCounter.visible = !ClientPrefs.hideHud;
+    	else
+    		judgementCounter.visible = false;
 
 		add(judgementCounter);
 
@@ -3106,14 +3107,16 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 
 		switch (curStage)
 		{
-case 'tank':
+			case 'tank':
 				moveTank(elapsed);
-                        case 'schoolEvil':
+
+            case 'schoolEvil':
 				if(!ClientPrefs.lowQuality && bgGhouls.animation.curAnim.finished) {
 					bgGhouls.visible = false;
 				}
-                                Application.current.window.title = randString(FlxG.random.int(8, 16));
-                                songTxt.text = randString(FlxG.random.int(6, 14)); 
+                Application.current.window.title = randString(FlxG.random.int(8, 16));
+                songTxt.text = randString(FlxG.random.int(6, 14)); 
+				
 			case 'philly':
 				if (trainMoving)
 				{
@@ -3251,11 +3254,11 @@ case 'tank':
 
 		//healthThing.text = "Health: " + Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2)))) + '%';
 
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Average: ?' + ' | Rating: ' + ratingName;
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
 			judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
 		if(ratingName != '?')	
 		{
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Average: ' + Math.round(averageMs) + 'ms' + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
+			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
 			judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
        }
 

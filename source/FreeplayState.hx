@@ -53,8 +53,7 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-Paths.clearStoredMemory();
-//Paths.clearUnusedMemory();
+		Paths.clearStoredMemory();
 		Application.current.window.title = Main.appTitle + ' - Freeplay Menu';
 		
 		PlayState.isStoryMode = false;
@@ -339,16 +338,18 @@ Paths.clearStoredMemory();
 			if(instPlaying != curSelected)
 			{
 				#if PRELOAD_ALL
-                                destroyFreeplayVocals();
+                destroyFreeplayVocals();
 				FlxG.sound.music.volume = 0;
 				Paths.currentModDirectory = songs[curSelected].folder;
 				var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-                                if (PlayState.SONG.needsVoices)
+
+                if (PlayState.SONG.needsVoices)
 					vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
 				else
 					vocals = new FlxSound();
-	FlxG.sound.list.add(vocals);
+
+				FlxG.sound.list.add(vocals);
 				FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 0.7);
 				vocals.play();
 				vocals.persist = true;

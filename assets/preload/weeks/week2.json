@@ -1,18 +1,18 @@
 {
 	"songs": [
-		["Spookeez", "spooky", [34, 51, 68]],
-		["South", "spooky", [34, 51, 68]],
-		["Monster", "monster", [34, 51, 68]]
+		["[56709]", "slavrei", [34, 51, 68]],
+		["Let the Fun Begin", "kalter", [34, 51, 68]],
+		["The Key Goals of our Guests", "wondernope", [34, 51, 68]]
 	],
 
 	"weekCharacters": [
 		"spooky",
 		"bf",
-		"gf"
+		""
 	],
 	"weekBackground": "halloween",
 
-	"storyName": "Spooky Month",
+	"storyName": "Bunker dudes",
 	"weekBefore": "week1",
 	"weekName": "Week 2",
 	"startUnlocked": true,

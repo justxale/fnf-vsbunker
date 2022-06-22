@@ -94,7 +94,7 @@ class PlayState extends MusicBeatState
 	public var modchartSounds:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public var modchartTexts:Map<String, ModchartText> = new Map<String, ModchartText>();
 	public var modchartSaves:Map<String, FlxSave> = new Map<String, FlxSave>();
-public var modchartObjects:Map<String, FlxSprite> = new Map<String, FlxSprite>();
+	public var modchartObjects:Map<String, FlxSprite> = new Map<String, FlxSprite>();
 
 	public var shader_chromatic_abberation:ChromaticAberrationEffect;
 
@@ -146,7 +146,7 @@ public var modchartObjects:Map<String, FlxSprite> = new Map<String, FlxSprite>()
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
 
-public var spawnTime:Float = 3000;
+	public var spawnTime:Float = 3000;
 
     public var pxgfdanced:Bool = false;
 
@@ -201,7 +201,7 @@ public var spawnTime:Float = 3000;
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
 
-public var ratingsData:Array<Rating> = [];	
+	public var ratingsData:Array<Rating> = [];	
 	public var sicks:Int = 0;
 	public var goods:Int = 0;
 	public var bads:Int = 0;
@@ -372,7 +372,7 @@ public var ratingsData:Array<Rating> = [];
 			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))
 		];
 
-                ratingsData.push(new Rating('sick')); //default rating
+    	ratingsData.push(new Rating('sick')); //default rating
 
 		var rating:Rating = new Rating('good');
 		rating.ratingMod = 0.7;
@@ -528,26 +528,10 @@ public var ratingsData:Array<Rating> = [];
 		{
 			switch (songName)
 			{
-				case 'spookeez' | 'south' | 'monster':
-					curStage = 'spooky';
-				case 'pico' | 'blammed' | 'philly' | 'philly-nice':
-					curStage = 'philly';
-				case 'milf' | 'satin-panties' | 'high':
-					curStage = 'limo';
-				case 'cocoa' | 'eggnog':
-					curStage = 'mall';
-				case 'winter-horrorland':
-					curStage = 'mallEvil';
-				case 'senpai' | 'roses':
-					curStage = 'school';
-				case 'thorns':
-					curStage = 'schoolEvil';
-                case 'test':
-                    curStage = 'stagePixel';
-				case 'ugh' | 'guns' | 'stress':
-					curStage = 'tank';
+				case 'cold-reception' | 'this-is-not-a-game' | 'new-friend':
+					curStage = 'alter';
 				default:
-					curStage = 'stage';
+					curStage = 'bar';
 			}
 		}
 
@@ -604,37 +588,11 @@ public var ratingsData:Array<Rating> = [];
 
 		switch (curStage)
 		{
-			case 'stage': //Week 1
-				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
-				add(bg);
-
-				var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
-				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-				stageFront.updateHitbox();
-				add(stageFront);
-
-				if(!ClientPrefs.lowQuality) {
-					var stageLight:BGSprite = new BGSprite('stage_light', -125, -100, 0.9, 0.9);
-					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
-					stageLight.updateHitbox();
-					add(stageLight);
-					var stageLight:BGSprite = new BGSprite('stage_light', 1225, -100, 0.9, 0.9);
-					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
-					stageLight.updateHitbox();
-					stageLight.flipX = true;
-					add(stageLight);
-
-					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -300, 1.3, 1.3);
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					add(stageCurtains);
-				}
-
-			case 'spooky': //Week 2
-				if(!ClientPrefs.lowQuality) {
-					halloweenBG = new BGSprite('halloween_bg', -200, 0, ['halloweem bg0', 'halloweem bg lightning strike']);
+			case 'alter': //Week 1
+				/*if(!ClientPrefs.lowQuality) {
+					var alterBG = new BGSprite('halloween_bg', -200, 0, ['halloweem bg0', 'halloweem bg lightning strike']);
 				} else {
-					halloweenBG = new BGSprite('halloween_bg_low', -200, -100);
+					var alterBG = new BGSprite('halloween_bg_low', -200, -100);
 				}
 				add(halloweenBG);
 
@@ -645,8 +603,12 @@ public var ratingsData:Array<Rating> = [];
 
 				//PRECACHE SOUNDS
 				precacheList.set('thunder_1', 'sound');
-				precacheList.set('thunder_2', 'sound');
+				precacheList.set('thunder_2', 'sound');*/
 
+			case 'bar': //Week 2
+			var bg:BGSprite = new BGSprite('bar', -600, -200, 0.9, 0.9);
+				add(bg);
+				
 			case 'philly': //Week 3
 				if(!ClientPrefs.lowQuality) {
 					var bg:BGSprite = new BGSprite('philly/sky', -100, 0, 0.1, 0.1);

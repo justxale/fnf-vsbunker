@@ -1,18 +1,18 @@
 {
 	"songs": [
-		["Bopeebo", "dad", [146, 113, 253]],
-		["Fresh", "dad", [146, 113, 253]],
-		["Dad Battle", "dad", [146, 113, 253]]
+		["Cold Reception", "alternope", [146, 113, 253]],
+		["This is not a Game", "alternope", [146, 113, 253]],
+		["New Friend", "alternope", [146, 113, 253]]
 	],
 
 	"weekCharacters": [
 		"dad",
 		"bf",
-		"gf"
+		""
 	],
 	"weekBackground": "stage",
 
-	"storyName": "Daddy Dearest",
+	"storyName": "Alternope",
 	"weekBefore": "tutorial",
 	"weekName": "Week 1",
 	"startUnlocked": true,

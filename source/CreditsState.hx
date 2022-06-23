@@ -77,10 +77,22 @@ class CreditsState extends MusicBeatState
 	
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Grafex Engine by'],
-		    ['XaleTheCat','xale','Developer of Grafex Engine','https://github.com/XaleTheCat','f7a300'],
-		    ['PurSnake','snake','Developer of Grafex Engine','https://github.com/PurpleSSSnake', 'C549DB'],
+			['vs Bunker by'],
+			['Wondernope','wonder', "Bunker's Owner",'https://www.youtube.com/channel/UC2v3lZHoWcm6g9SbiBT2PKQ','f7a300'],
+			['Kalter','kalter','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','4b4041'],
+			['WHO','pukovich','Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
+			['Xale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'],
+			['PurSnake','pursnake','Charter, Code Assistant','https://github.com/PurpleSSSnake', 'b550ff'],	
+			['Tox Miha','toxmiha','Animator','https://twitter.com/Tox_miha','ffa300'],
+			['Tea Mushroom','mushroom','Animator','','cfa6af'],
+			['Himdish','himdish','Animator','','00d526'],
+			['P4olka','pcholka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','fece00'],
+			['Bluzk','bluzk','','Artist','7e6b6a'],
+		    ['Slavrei','xale','Artist','https://twitter.com/Slav_Rei','f7a300'],   
             [''],
+			['Sponsors'],
+			['Nemolevich','nemolevich','Sponsor, Co-director','', '919191'],
+			[''],
             ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
@@ -161,15 +173,11 @@ class CreditsState extends MusicBeatState
 	var holdTime:Float = 0;
 	override function update(elapsed:Float)
 	{
-                if(FlxG.keys.justPressed.F11)
-                {
-                FlxG.fullscreen = !FlxG.fullscreen;
-                }
-		
-                if (FlxG.sound.music.volume < 0.7)
-		{
+        if(FlxG.keys.justPressed.F11)
+        	FlxG.fullscreen = !FlxG.fullscreen;
+
+        if (FlxG.sound.music.volume < 0.7)
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
 
 		if(!quitting)
 			{
@@ -204,14 +212,17 @@ class CreditsState extends MusicBeatState
 						}
 					}
 				}
-	
-	if(controls.ACCEPT) {
-	if (creditsStuff[curSelected][3] == '' || creditsStuff[curSelected][3] == null || creditsStuff[curSelected][3].length > 4) {
-		FlxG.sound.play(Paths.sound('cancelMenu'));
-	}else{
-		CoolUtil.browserLoad(creditsStuff[curSelected][3]);
-	}
-}
+				if(controls.ACCEPT)
+				{
+					if (creditsStuff[curSelected][3] == '' || creditsStuff[curSelected][3] == null || creditsStuff[curSelected][3].length > 4)
+					{
+						FlxG.sound.play(Paths.sound('cancelMenu'));
+					}
+					else
+					{
+						CoolUtil.browserLoad(creditsStuff[curSelected][3]);
+					}
+				}
 				if (controls.BACK)
 				{
 					if(colorTween != null) {

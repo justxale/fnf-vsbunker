@@ -607,7 +607,9 @@ class PlayState extends MusicBeatState
 				precacheList.set('thunder_2', 'sound');*/
 
 			case 'bar': //Week 2
-			var bg:BGSprite = new BGSprite('bar', -600, -200, 0.9, 0.9);
+				trace("Trying to load a scene");
+				var bg:BGSprite = new BGSprite('bunker/bar', -600, -200, 1, 1, null, null);
+				//bg.loadGraphic('assets/week2/images/bar.png');
 				add(bg);
 				
 			case 'philly': //Week 3

@@ -1,139 +1,75 @@
 {
 	"animations": [
 		{
+			"loop": false,
+			"offsets": [
+				28,
+				291
+			],
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Kalter-left"
+		},
+		{
+			"loop": false,
 			"offsets": [
 				-9,
-				10
+				113
 			],
-			"loop": false,
-			"anim": "singLEFT",
 			"fps": 24,
-			"name": "Kalter-left",
-			"indices": []
-		},
-		{
-			"offsets": [
-				0,
-				-30
-			],
-			"loop": false,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "Kalter-down",
-			"indices": []
+			"indices": [],
+			"name": "Kalter-down"
 		},
 		{
-			"offsets": [
-				-6,
-				50
-			],
 			"loop": false,
+			"offsets": [
+				-57,
+				366
+			],
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "Kalter-up",
-			"indices": []
+			"indices": [],
+			"name": "Kalter-up"
 		},
 		{
-			"offsets": [
-				0,
-				27
-			],
 			"loop": false,
+			"offsets": [
+				272,
+				-5
+			],
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "Kalter-right",
-			"indices": []
+			"indices": [],
+			"name": "Kalter-right"
 		},
 		{
+			"loop": true,
 			"offsets": [
-				0,
-				0
+				-94,
+				239
 			],
-			"loop": false,
 			"anim": "idle",
 			"fps": 24,
 			"name": "Kalter-idle",
 			"indices": []
-		},
-		{
-			"offsets": [
-				0,
-				0
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "idle-loop",
-			"indices": [
-				10,
-				11,
-				12,
-				12
-			],
-			"name": "Kalter-idle"
-		},
-		{
-			"offsets": [
-				-9,
-				10
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singLEFT-loop",
-			"indices": [
-				12,
-				13,
-				14,
-				15
-			],
-			"name": "Kalter-left"
-		},
-		{
-			"offsets": [
-				0,
-				27
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singRIGHT-loop",
-			"indices": [
-				15,
-				16,
-				17,
-				18
-			],
-			"name": "Kalter-right"
-		},
-		{
-			"offsets": [
-				-6,
-				50
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singUP-loop",
-			"indices": [
-				56,
-				57,
-				58,
-				59
-			],
-			"name": "Kalter-up"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Wondernope",
+	"image": "characters/Kalter",
 	"position": [
 		0,
 		0
 	],
-	"healthicon": "kalter",
-	"flip_x": false,
-	"healthbar_colors": [
+	"healthbar_colors2": [
 		175,
 		102,
 		206
 	],
-	"healthbar_colors2": [
+	"healthicon": "kalter",
+	"flip_x": false,
+	"healthbar_colors": [
 		175,
 		102,
 		206
@@ -143,5 +79,5 @@
 		0
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.8
 }

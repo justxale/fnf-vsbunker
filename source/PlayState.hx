@@ -306,6 +306,7 @@ class PlayState extends MusicBeatState
 	public static var deathCounter:Int = 0;
 
 	public var defaultCamZoom:Float = 1.05;
+	public var currentCamBeat:Float = 4;
 
     var loseVin:FlxSprite;
 	var badLoseVin:FlxSprite;
@@ -359,6 +360,7 @@ class PlayState extends MusicBeatState
 	{
 		instance = this;
         currentPState = this;
+        camZooming = true;
 
         setOnLuas('swapStrumLines', swapStrumLines);
 
@@ -1373,7 +1375,7 @@ for(mod in Paths.getGlobalMods())
 
  
         scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.5;
 		scoreTxt.borderQuality = 2;
@@ -1381,23 +1383,26 @@ for(mod in Paths.getGlobalMods())
 		add(scoreTxt);
 
         judgementCounter = new FlxText(20, 0, 0, "", 20);
-		judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		judgementCounter.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		judgementCounter.borderSize = 1.5;
 		judgementCounter.borderQuality = 2;
 		judgementCounter.scrollFactor.set();
 		judgementCounter.cameras = [camHUD];
 		judgementCounter.screenCenter(Y);
-		judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
-    	if(ClientPrefs.showjud) 
-    		judgementCounter.visible = !ClientPrefs.hideHud;
-    	else
-    		judgementCounter.visible = false;
 
-		add(judgementCounter);
+		var s:String = 'NotePressInfo';
+			judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+			
+			if(ClientPrefs.showjud) 
+				judgementCounter.visible = !ClientPrefs.hideHud;
+			else
+				judgementCounter.visible = false;
+
+			add(judgementCounter);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "", 32);
-		botplayTxt.text = "BOTPLAY";
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.text = Translation.string("BOTPLAY", 'BotplayText');
+		botplayTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -3088,7 +3093,7 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 
 		maxHealthProb = health * 100;
 
-        for (hudcam in [camSus, camNOTES, camNOTEHUD, camUnderHUDBeforeGame]) {
+        /*for (hudcam in [camSus, camNOTES, camNOTEHUD, camUnderHUDBeforeGame]) {
         if (hudcam != null) {
 		hudcam.zoom = camHUD.zoom;
                 hudcam.visible = camHUD.visible;
@@ -3096,7 +3101,7 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
                 hudcam.y = camHUD.y;
                 hudcam.alpha = camHUD.alpha;
 		}  
-            }
+            }*/
 
         if(FlxG.keys.justPressed.F11)
         {
@@ -3254,13 +3259,21 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 
 		//healthThing.text = "Health: " + Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2)))) + '%';
 
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
-			judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
+		var s:String = 'HealthBarInfo';
+		scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName;
+		
+		s = 'NotePressInfo';
+		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+
 		if(ratingName != '?')	
 		{
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
-			judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
-       }
+			s = 'HealthBarInfo';
+			scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;
+			
+			s = 'NotePressInfo';
+			judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+		
+		}
 
 		if(botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
@@ -3287,17 +3300,18 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
                 
              case 'Modern':		
 				var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-				iconP1.scale.set(mult, mult);
-				iconP1.updateHitbox();
+		                iconP1.scale.set(mult, mult);
+		                iconP1.updateHitbox();
 
-				var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-				iconP2.scale.set(mult, mult);
-				iconP2.updateHitbox();
+		                var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
+		                iconP2.scale.set(mult, mult);
+		                iconP2.updateHitbox();
 
-				var iconOffset:Int = 26;
+		                var iconOffset:Int = 26;
 
-				iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
+		                iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
 		                iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
+
                 
             case 'Classic':
                 iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, 0.50)));
@@ -3410,10 +3424,10 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-            camNOTES.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			camSus.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-			camNOTEHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-            camUnderHUDBeforeGame.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+                        camNOTES.zoom = FlxMath.lerp(1, camNOTES.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+			camSus.zoom = FlxMath.lerp(1, camSus.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+			camNOTEHUD.zoom = FlxMath.lerp(1, camNOTEHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+                        camUnderHUDBeforeGame.zoom = FlxMath.lerp(1, camUnderHUDBeforeGame.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 		}
 
 		FlxG.watch.addQuick("beatShit", curBeat);
@@ -3891,6 +3905,10 @@ case 'Dadbattle Spotlight':
 
 					FlxG.camera.zoom += camZoom;
 					camHUD.zoom += hudZoom;
+                                        camNOTES.zoom += hudZoom; 
+			                camSus.zoom += hudZoom;
+			                camNOTEHUD.zoom += hudZoom;
+                                        camUnderHUDBeforeGame.zoom += hudZoom;
 				}
 
 			case 'Trigger BG Ghouls':
@@ -3978,7 +3996,7 @@ case 'Dadbattle Spotlight':
 
 			case 'Screen Shake':
 				var valuesArray:Array<String> = [value1, value2];
-				var targetsArray:Array<FlxCamera> = [camGame, camHUD];
+				var targetsArray:Array<FlxCamera> = [camGame, camHUD, camNOTES, camSus, camNOTEHUD, camUnderHUDBeforeGame];
 				for (i in 0...targetsArray.length) {
 					var split:Array<String> = valuesArray[i].split(',');
 					var duration:Float = 0;
@@ -4839,9 +4857,6 @@ callOnLuas('noteMissPress', [direction]);
 
 	private function opponentNoteHit(note:Note):Void
 	{
-		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
-			camZooming = true;
-
 		if(note.noteType == 'Hey!' && dad.animOffsets.exists('hey'))
 		{
 			dad.playAnim('hey', true);
@@ -5316,20 +5331,22 @@ var tankX:Float = 400;
 				moveCameraSection(Std.int(curStep / 16));
 			}
 
-		if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 4 == 0)
-			{
+		if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % currentCamBeat == 0) {
 				FlxG.camera.zoom += 0.015 * camZoomingMult;
-				camHUD.zoom += 0.03 * camZoomingMult;
+			        camHUD.zoom += 0.03 * camZoomingMult;
+                                camNOTES.zoom += 0.03 * camZoomingMult;
+			        camSus.zoom += 0.03 * camZoomingMult;
+			        camNOTEHUD.zoom += 0.03 * camZoomingMult;
+                                camUnderHUDBeforeGame.zoom += 0.03 * camZoomingMult;
 			}
 
-            switch(ClientPrefs.hliconbop)
-				{
+                switch(ClientPrefs.hliconbop) {
 					case 'Modern':
-						iconP1.scale.set(1.2, 1.2);
-						iconP2.scale.set(1.2, 1.2);
-		
-						iconP1.updateHitbox();
-						iconP2.updateHitbox();
+		                                iconP1.scale.set(1.2, 1.2);
+		                                iconP2.scale.set(1.2, 1.2);
+
+		                                iconP1.updateHitbox();
+		                                iconP2.updateHitbox();
 		
 					case 'Classic':
 						iconP1.setGraphicSize(Std.int(iconP1.width + 30));
@@ -5381,13 +5398,13 @@ var tankX:Float = 400;
 
 		switch (curStage)
 		{
-case 'tank':
+                     case 'tank':
 				if(!ClientPrefs.lowQuality) tankWatchtower.dance();
 				foregroundSprites.forEach(function(spr:BGSprite)
 				{
 					spr.dance();
 				});
-            case 'school':
+                     case 'school':
 				if(!ClientPrefs.lowQuality) {
 					bgGirls.dance();
 				}
@@ -5560,13 +5577,15 @@ if(ret == FunkinLua.Function_StopLua) {
 					}
 			}
 
+			var s:String = 'Rating';
+
 			// Rating FC
 			ratingFC = "";
-			if (sicks > 0) ratingFC = "SFC";
-			if (goods > 0) ratingFC = "GFC";
-			if (bads > 0 || shits > 0) ratingFC = "FC";
-			if (songMisses > 0 && songMisses < 10) ratingFC = "SDCB";
-			else if (songMisses >= 10) ratingFC = "Clear";
+			if (sicks > 0) ratingFC = Translation.string("SFC", s);
+			if (goods > 0) ratingFC = Translation.string("GFC", s);
+			if (bads > 0 || shits > 0) ratingFC = Translation.string("FC", s);
+			if (songMisses > 0 && songMisses < 10) ratingFC = Translation.string("SDCB", s);
+			else if (songMisses >= 10) ratingFC = Translation.string("Clear", s);
 		}
 		setOnLuas('rating', ratingPercent);
 		setOnLuas('ratingName', ratingName);
@@ -5602,40 +5621,26 @@ if(ret == FunkinLua.Function_StopLua) {
 	}
 
 	public function healthBarShake(intensity:Float) // Litle rewrite - PurSnake
-		{
-			redFlash();
+	{
+		redFlash();
 
-			for (helem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
-			    if (helem != null) {
-			        new FlxTimer().start(0.01, function(tmr:FlxTimer)
-						{
-							helem.y += (10 * intensity);
-								
-						});
-						new FlxTimer().start(0.05, function(tmr:FlxTimer)
-						{
-							helem.y -= (15 * intensity);
-						});
-						new FlxTimer().start(0.10, function(tmr:FlxTimer)
-						{
-							helem.y += (8 * intensity);
-						});
-						new FlxTimer().start(0.15, function(tmr:FlxTimer)
-						{
-							helem.y -= (5 * intensity);
-						});
-						new FlxTimer().start(0.20, function(tmr:FlxTimer)
-						{
-							helem.y += (3 * intensity);
-						});
-						new FlxTimer().start(0.25, function(tmr:FlxTimer)
-						{
-							helem.y -= (1 * intensity);
-						});
-
-                }  }
-
+		for (helem in [healthBar, iconP1, iconP2, healthBarWN, healthBarBG, healthBarHigh, healthStrips]) {
+			if (helem != null) {
+				for (timer in [
+					{time: 0.01, forse:  (10 * intensity)},
+					{time: 0.05, forse: -(15 * intensity)},
+					{time: 0.10, forse:  (8 * intensity)},
+					{time: 0.15, forse: -(5 * intensity)},
+					{time: 0.20, forse:  (3 * intensity)},
+					{time: 0.25, forse: -(1 * intensity)}
+				]) {
+					new FlxTimer().start(timer.time, function(tmr:FlxTimer) {
+						helem.y += timer.forse;
+					});
+				}
+			}
 		}
+	}
 		
 	function redFlash() // HaxeFlixel documentaion be like - PurSnake || Rewrited - PurSnake
 		{

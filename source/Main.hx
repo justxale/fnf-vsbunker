@@ -113,6 +113,7 @@ Application.current.window.onFocusOut.add(onWindowFocusOut);
 		initialState = TitleState;
 		#end
 
+		Translation.init();
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 

@@ -37,8 +37,7 @@ class ClientPrefs {
     public static var SusTransper:Float = 1;
 	public static var ratingSystem:String = 'Grafex';
 	public static var ratingSystemNum:Int = 0;
-
-        //WHAT WAS
+ public static var curLanguage:String = 'English';
     public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var showFPS:Bool = true;
@@ -135,8 +134,10 @@ class ClientPrefs {
 		FlxG.save.data.chartautosave = chartautosave;
         FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.ratingSystem = ratingSystem;
-		FlxG.save.data.ratingSystemNum = ratingSystemNum;
- FlxG.save.data.SusTransper = SusTransper;
+FlxG.save.data.ratingSystemNum = ratingSystemNum;
+		FlxG.save.data.curLanguage = Translation.languages[Translation.curLanguage].name;
+ 		FlxG.save.data.SusTransper = SusTransper;
+
 
 
  FlxG.save.data.micedUpSus = micedUpSus;
@@ -215,6 +216,13 @@ if(FlxG.save.data.micedUpSus != null) {
 		}
 		if(FlxG.save.data.hideOpponenStrums == null) {
 			hideOpponenStrums = false;
+		}
+
+if(FlxG.save.data.curLanguage != null) {
+			curLanguage = FlxG.save.data.curLanguage;
+		}
+		if(FlxG.save.data.curLanguage == null) {
+			curLanguage = "English";
 		}
 
 

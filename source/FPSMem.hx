@@ -92,7 +92,7 @@ class FPSMem extends TextField
 					text += "Memory: " + currentMem + " MB\n";
 				}
 			}
-		text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
+		//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
 		}
 
 		cacheCount = currentCount;

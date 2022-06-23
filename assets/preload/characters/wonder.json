@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				-190,
-				177
+				-150,
+				186
 			],
 			"loop": false,
 			"anim": "singLEFT",
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				-143,
-				58
+				-185,
+				29
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-207,
-				214
+				-189,
+				239
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-208,
-				185
+				-213,
+				193
 			],
 			"loop": false,
 			"anim": "singRIGHT",
@@ -54,13 +54,61 @@
 			"fps": 24,
 			"name": "W-idle",
 			"indices": []
+		},
+		{
+			"offsets": [
+				-150,
+				195
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT-loop",
+			"indices": [
+				12,
+				13,
+				14,
+				15
+			],
+			"name": "W-left"
+		},
+		{
+			"offsets": [
+				-210,
+				199
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singRIGHT-loop",
+			"indices": [
+				15,
+				16,
+				17,
+				18
+			],
+			"name": "W-right"
+		},
+		{
+			"offsets": [
+				-213,
+				199
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singUP-loop",
+			"indices": [
+				56,
+				57,
+				58,
+				59
+			],
+			"name": "W-up"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Wondernope",
 	"position": [
 		0,
-		0
+		320
 	],
 	"healthbar_colors2": [
 		175,
@@ -70,13 +118,13 @@
 	"healthicon": "wonder",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		95,
+		255,
+		66
 	],
 	"camera_position": [
-		0,
-		0
+		120,
+		-160
 	],
 	"sing_duration": 6.1,
 	"scale": 1

@@ -1,83 +1,83 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				-190,
-				177
-			],
 			"loop": false,
+			"offsets": [
+				164,
+				2
+			],
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "rei-left",
-			"indices": []
+			"indices": [],
+			"name": "rei-left"
 		},
 		{
-			"offsets": [
-				-143,
-				58
-			],
 			"loop": false,
+			"offsets": [
+				21,
+				-257
+			],
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "rei-down",
-			"indices": []
+			"indices": [],
+			"name": "rei-down"
 		},
 		{
-			"offsets": [
-				-207,
-				214
-			],
 			"loop": false,
+			"offsets": [
+				-13,
+				73
+			],
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "rei-up",
-			"indices": []
+			"indices": [],
+			"name": "rei-up"
 		},
 		{
-			"offsets": [
-				-208,
-				185
-			],
 			"loop": false,
+			"offsets": [
+				-69,
+				-7
+			],
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "rei-right",
-			"indices": []
+			"indices": [],
+			"name": "rei-right"
 		},
 		{
-			"offsets": [
-				-208,
-				185
-			],
 			"loop": false,
-			"anim": "idle",
+			"offsets": [
+				0,
+				0
+			],
 			"fps": 24,
-			"name": "rei-idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Rei-idle"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/SlavRei",
 	"position": [
-		0,
-		0
+		60,
+		-40
 	],
 	"healthbar_colors2": [
-		175,
-		102,
-		206
+		135,
+		80,
+		215
 	],
 	"healthicon": "slavrei",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		249,
+		94,
+		255
 	],
 	"camera_position": [
-		0,
-		0
+		40,
+		180
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.7
 }

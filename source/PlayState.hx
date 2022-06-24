@@ -3073,7 +3073,7 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 	}
 
 	public var paused:Bool = false;
-        public var canReset:Bool = true;
+    public var canReset:Bool = true;
 	var startedCountdown:Bool = false;
 	var canPause:Bool = true;
 	var limoSpeed:Float = 0;
@@ -3094,16 +3094,6 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 		wiggleShit.update(elapsed);
 
 		maxHealthProb = health * 100;
-
-        /*for (hudcam in [camSus, camNOTES, camNOTEHUD, camUnderHUDBeforeGame]) {
-        if (hudcam != null) {
-		hudcam.zoom = camHUD.zoom;
-                hudcam.visible = camHUD.visible;
-                hudcam.x = camHUD.x;
-                hudcam.y = camHUD.y;
-                hudcam.alpha = camHUD.alpha;
-		}  
-            }*/
 
         if(FlxG.keys.justPressed.F11)
         {
@@ -3295,26 +3285,23 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
     	switch(ClientPrefs.hliconbop)
     	   {
     		case 'Grafex':	
-    		var iconOffset:Int = 26;
-
-		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01) - iconOffset);
-		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
+    			var iconOffset:Int = 26;
+				iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01) - iconOffset);
+				iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
                 
-             case 'Modern':		
+            case 'Modern':		
 				var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-		                iconP1.scale.set(mult, mult);
-		                iconP1.updateHitbox();
+		        iconP1.scale.set(mult, mult);
+		        iconP1.updateHitbox();
 
-		                var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
-		                iconP2.scale.set(mult, mult);
-		                iconP2.updateHitbox();
+		        var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9), 0, 1));
+		        iconP2.scale.set(mult, mult);
+		        iconP2.updateHitbox();
+		        var iconOffset:Int = 26;
 
-		                var iconOffset:Int = 26;
-
-		                iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
-		                iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
-
-                
+		        iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
+		        iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
+ 
             case 'Classic':
                 iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, 0.50)));
 				iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, 0.50)));
@@ -3334,7 +3321,8 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 			if (iconP1.animation.frames == 3) {
 			if (healthBar.percent < 20) {
 				iconP1.animation.curAnim.curFrame = 1;
-                                shakeFromLosing(iconP1); }
+                //shakeFromLosing(iconP1); 
+			}
 			else if (healthBar.percent > 80)
 				iconP1.animation.curAnim.curFrame = 2;
 			else
@@ -3347,7 +3335,7 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 		}
 		if (iconP2.animation.frames == 3) {
 			if (healthBar.percent > 80) {
-                                shakeFromLosing(iconP2);
+                //shakeFromLosing(iconP2);
 				iconP2.animation.curAnim.curFrame = 1; }
 			else if (healthBar.percent < 20)
 				iconP2.animation.curAnim.curFrame = 2;
@@ -3426,10 +3414,10 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-                        camNOTES.zoom = FlxMath.lerp(1, camNOTES.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+            camNOTES.zoom = FlxMath.lerp(1, camNOTES.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camSus.zoom = FlxMath.lerp(1, camSus.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 			camNOTEHUD.zoom = FlxMath.lerp(1, camNOTEHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
-                        camUnderHUDBeforeGame.zoom = FlxMath.lerp(1, camUnderHUDBeforeGame.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
+            camUnderHUDBeforeGame.zoom = FlxMath.lerp(1, camUnderHUDBeforeGame.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125 * camZoomingDecay), 0, 1));
 		}
 
 		FlxG.watch.addQuick("beatShit", curBeat);
@@ -3483,8 +3471,8 @@ dunceNote.spawned=true;
 				var strumGroup:FlxTypedGroup<StrumNote> = playerStrums;
 				if(!daNote.mustPress) strumGroup = opponentStrums;
 
-                                 if (daNote.isSustainNote)
-				daNote.cameras = [camSus];
+                if (daNote.isSustainNote)
+					daNote.cameras = [camSus];
 
 				var strumX:Float = strumGroup.members[daNote.noteData].x;
 				var strumY:Float = strumGroup.members[daNote.noteData].y;
@@ -3907,10 +3895,10 @@ case 'Dadbattle Spotlight':
 
 					FlxG.camera.zoom += camZoom;
 					camHUD.zoom += hudZoom;
-                                        camNOTES.zoom += hudZoom; 
-			                camSus.zoom += hudZoom;
-			                camNOTEHUD.zoom += hudZoom;
-                                        camUnderHUDBeforeGame.zoom += hudZoom;
+                    camNOTES.zoom += hudZoom; 
+			        camSus.zoom += hudZoom;
+			        camNOTEHUD.zoom += hudZoom;
+                    camUnderHUDBeforeGame.zoom += hudZoom;
 				}
 
 			case 'Trigger BG Ghouls':
@@ -4108,7 +4096,7 @@ case 'Dadbattle Spotlight':
 						}
 					});
 				}
-case 'Set Property':
+			case 'Set Property':
 				var killMe:Array<String> = value1.split('.');
 				if(killMe.length > 1) {
 					FunkinLua.setVarInArray(FunkinLua.getPropertyLoopThingWhatever(killMe, true, true), killMe[killMe.length-1], value2);
@@ -4149,7 +4137,7 @@ case 'Set Property':
 	var cameraTwn:FlxTween;
 	public function moveCamera(isDad:Bool)
 	{
-getCamOffsets();
+		getCamOffsets();
 		if(isDad)
 		{
 			camFocus = 'dad';
@@ -4167,11 +4155,8 @@ getCamOffsets();
 			camFollow.x = bfPos[0] - boyfriendCameraOffset[0];
 			camFollow.y = bfPos[1] + boyfriendCameraOffset[1];
 
-			//bfcamoffsetx = boyfriendCameraOffset[0];   
-			//bfcamoffsety = boyfriendCameraOffset[1]; 
-
 			setOnLuas('bfcamoffsetx', bfcamoffsetx);
-                        setOnLuas('bfcamoffsety', bfcamoffsety);
+            setOnLuas('bfcamoffsety', bfcamoffsety);
 
 			if (Paths.formatToSongPath(SONG.song) == 'tutorial' && cameraTwn == null && FlxG.camera.zoom != 1)
 			{
@@ -5335,20 +5320,20 @@ var tankX:Float = 400;
 
 		if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % currentCamBeat == 0) {
 				FlxG.camera.zoom += 0.015 * camZoomingMult;
-			        camHUD.zoom += 0.03 * camZoomingMult;
-                                camNOTES.zoom += 0.03 * camZoomingMult;
-			        camSus.zoom += 0.03 * camZoomingMult;
-			        camNOTEHUD.zoom += 0.03 * camZoomingMult;
-                                camUnderHUDBeforeGame.zoom += 0.03 * camZoomingMult;
+				camHUD.zoom += 0.03 * camZoomingMult;
+                camNOTES.zoom += 0.03 * camZoomingMult;
+			    camSus.zoom += 0.03 * camZoomingMult;
+			    camNOTEHUD.zoom += 0.03 * camZoomingMult;
+                camUnderHUDBeforeGame.zoom += 0.03 * camZoomingMult;
 			}
 
                 switch(ClientPrefs.hliconbop) {
 					case 'Modern':
-		                                iconP1.scale.set(1.2, 1.2);
-		                                iconP2.scale.set(1.2, 1.2);
+		                iconP1.scale.set(1.2, 1.2);
+		                iconP2.scale.set(1.2, 1.2);
 
-		                                iconP1.updateHitbox();
-		                                iconP2.updateHitbox();
+		                iconP1.updateHitbox();
+		                iconP2.updateHitbox();
 		
 					case 'Classic':
 						iconP1.setGraphicSize(Std.int(iconP1.width + 30));
@@ -5360,8 +5345,8 @@ var tankX:Float = 400;
 					case 'Grafex':
 						if (curBeat % 2 == 0)
 							{   
-                                                                iconbop = 1.1;
-                                                                iconP1.scale.x = 1;
+                                iconbop = 1.1;
+                                iconP1.scale.x = 1;
 								iconP2.scale.y = 1; 
 								FlxTween.tween(iconP1.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
 								FlxTween.tween(iconP2.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
@@ -5389,72 +5374,14 @@ var tankX:Float = 400;
 			gf.dance();
 		}
 
-                if (curBeat % boyfriend.danceEveryNumBeats == 0 && boyfriend.animation.curAnim != null && !boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.stunned)
+        if (curBeat % boyfriend.danceEveryNumBeats == 0 && boyfriend.animation.curAnim != null && !boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.stunned)
 		{
 			boyfriend.dance();
 		}
+		
 		if (curBeat % dad.danceEveryNumBeats == 0 && dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 		{
 			dad.dance();
-		}
-
-		switch (curStage)
-		{
-                     case 'tank':
-				if(!ClientPrefs.lowQuality) tankWatchtower.dance();
-				foregroundSprites.forEach(function(spr:BGSprite)
-				{
-					spr.dance();
-				});
-                     case 'school':
-				if(!ClientPrefs.lowQuality) {
-					bgGirls.dance();
-				}
-
-			case 'mall':
-				if(!ClientPrefs.lowQuality) {
-					upperBoppers.dance(true);
-				}
-
-				if(heyTimer <= 0) bottomBoppers.dance(true);
-				santa.dance(true);
-
-			case 'limo':
-				if(!ClientPrefs.lowQuality) {
-					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-					{
-						dancer.dance();
-					});
-				}
-
-				if (FlxG.random.bool(10) && fastCarCanDrive)
-					fastCarDrive();
-
-                        case 'stagePixel':
-				{
-                                pxgfdanced = !pxgfdanced;
-
-				if (pxgfdanced)
-					gfPixel.animation.play('danceRight');
-				else
-					gfPixel.animation.play('danceLeft');
-				}
-			case "philly":
-				if (!trainMoving)
-					trainCooldown += 1;
-
-				if (curBeat % 4 == 0)
-				{
-					curLight = FlxG.random.int(0, phillyLightsColors.length - 1, [curLight]);
-					phillyWindow.color = phillyLightsColors[curLight];
-					phillyWindow.alpha = 1;
-				}
-
-				if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
-				{
-					trainCooldown = FlxG.random.int(-4, 0);
-					trainStart();
-				}
 		}
 
 		if (curStage == 'spooky' && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
@@ -5469,15 +5396,16 @@ var tankX:Float = 400;
 
 	public var closeLuas:Array<FunkinLua> = [];
 	public function callOnLuas(event:String, args:Array<Dynamic>, ignoreStops=false, ?exclusions:Array<String>):Dynamic {
-		var returnVal:Dynamic = FunkinLua.Function_Continue;
-if(exclusions == null) exclusions = [];
+	var returnVal:Dynamic = FunkinLua.Function_Continue;
+
+	if(exclusions == null) exclusions = [];
 		#if LUA_ALLOWED
 		for (i in 0...luaArray.length) {
-if(exclusions.contains(luaArray[i].scriptName)){
+			if(exclusions.contains(luaArray[i].scriptName)){
 				continue;
 			}
 			var ret:Dynamic = luaArray[i].call(event, args);
-if(ret == FunkinLua.Function_StopLua) {
+			if(ret == FunkinLua.Function_StopLua) {
 				if(ignoreStops)
 					ret = FunkinLua.Function_Continue;
 				else
@@ -5728,45 +5656,45 @@ if (iconP2.animation.frames == 3)
 
 		function triggerCamMovement(num:Float = 0)
 			{
-                        setOnLuas('OffsetMultiplier', daFunneOffsetMultiplier);
-                        if (PlayState.NotesCanMoveCam)
-                        if (!isEventWorking)
-				if (camFocus == 'bf')
-				{
-					switch (num)
-					{
-						case 2:
-							camFollow.y = bfPos[1] - daFunneOffsetMultiplier;
-							camFollow.x = bfPos[0];
-						case 3:
-							camFollow.x = bfPos[0] + daFunneOffsetMultiplier;
-							camFollow.y = bfPos[1];
-						case 1:
-							camFollow.y = bfPos[1] + daFunneOffsetMultiplier;
-							camFollow.x = bfPos[0];
-						case 0:
-							camFollow.x = bfPos[0] - daFunneOffsetMultiplier;
-							camFollow.y = bfPos[1];
-					}
-				}
-				else
-				{
-					switch (num)
-					{
-						case 2:
-							camFollow.y = dadPos[1] - daFunneOffsetMultiplier;
-							camFollow.x = dadPos[0];
-						case 3:
-							camFollow.x = dadPos[0] + daFunneOffsetMultiplier;
-							camFollow.y = dadPos[1];
-						case 1:
-							camFollow.y = dadPos[1] + daFunneOffsetMultiplier;
-							camFollow.x = dadPos[0];
-						case 0:
-							camFollow.x = dadPos[0] - daFunneOffsetMultiplier;
-							camFollow.y = dadPos[1];
-					}
-				}
+            	setOnLuas('OffsetMultiplier', daFunneOffsetMultiplier);
+            	if (PlayState.NotesCanMoveCam)
+            		if (!isEventWorking)
+						if (camFocus == 'bf')
+						{
+							switch (num)
+							{
+								case 2:
+									camFollow.y = bfPos[1] - daFunneOffsetMultiplier;
+									camFollow.x = bfPos[0];
+								case 3:
+									camFollow.x = bfPos[0] + daFunneOffsetMultiplier;
+									camFollow.y = bfPos[1];
+								case 1:
+									camFollow.y = bfPos[1] + daFunneOffsetMultiplier;
+									camFollow.x = bfPos[0];
+								case 0:
+									camFollow.x = bfPos[0] - daFunneOffsetMultiplier;
+									camFollow.y = bfPos[1];
+							}
+						}
+						else
+						{
+							switch (num)
+							{
+								case 2:
+									camFollow.y = dadPos[1] - daFunneOffsetMultiplier;
+									camFollow.x = dadPos[0];
+								case 3:
+									camFollow.x = dadPos[0] + daFunneOffsetMultiplier;
+									camFollow.y = dadPos[1];
+								case 1:
+									camFollow.y = dadPos[1] + daFunneOffsetMultiplier;
+									camFollow.x = dadPos[0];
+								case 0:
+									camFollow.x = dadPos[0] - daFunneOffsetMultiplier;
+									camFollow.y = dadPos[1];
+							}
+						}
 			}
 
 		function getCamOffsets()

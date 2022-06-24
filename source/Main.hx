@@ -40,14 +40,13 @@ class Main extends Sprite
 
 		if (stage != null)
 		{
-			init();
-			
+			init();		
 		}
 		else
 		{
 			addEventListener(Event.ADDED_TO_STAGE, init);
 		}
-Application.current.window.onFocusOut.add(onWindowFocusOut);
+		Application.current.window.onFocusOut.add(onWindowFocusOut);
 		Application.current.window.onFocusIn.add(onWindowFocusIn);
 	}
 
@@ -91,7 +90,6 @@ Application.current.window.onFocusOut.add(onWindowFocusOut);
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 		}
-
 		setupGame();
 	}
 
@@ -118,9 +116,8 @@ Application.current.window.onFocusOut.add(onWindowFocusOut);
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-                addChild(new FPSMem(10, 3, 0xFFFFFF));
+        addChild(new FPSMem(10, 3, 0xFFFFFF));
 		#end
-
 
 		#if html5
 		//FlxG.autoPause = false;

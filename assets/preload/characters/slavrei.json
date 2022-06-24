@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				-190,
-				177
-			],
 			"loop": false,
+			"offsets": [
+				-51,
+				171
+			],
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "rei-left",
-			"indices": []
+			"indices": [],
+			"name": "rei-left"
 		},
 		{
-			"offsets": [
-				-143,
-				58
-			],
 			"loop": false,
+			"offsets": [
+				-77,
+				-42
+			],
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "rei-down",
-			"indices": []
+			"indices": [],
+			"name": "rei-down"
 		},
 		{
-			"offsets": [
-				-207,
-				214
-			],
 			"loop": false,
+			"offsets": [
+				-75,
+				217
+			],
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "rei-up",
-			"indices": []
+			"indices": [],
+			"name": "rei-up"
 		},
 		{
-			"offsets": [
-				-208,
-				185
-			],
 			"loop": false,
+			"offsets": [
+				-125,
+				168
+			],
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "rei-right",
-			"indices": []
+			"indices": [],
+			"name": "rei-right"
 		},
 		{
-			"offsets": [
-				-208,
-				185
-			],
 			"loop": false,
-			"anim": "idle",
+			"offsets": [
+				-71,
+				179
+			],
 			"fps": 24,
-			"name": "rei-idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Rei-idle"
 		}
 	],
 	"no_antialiasing": false,
@@ -79,5 +79,5 @@
 		0
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.8
 }

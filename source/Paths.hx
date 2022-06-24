@@ -46,7 +46,7 @@ class Paths
 		'songs',
 		'music',
 		'sounds',
-                'shaders',
+        'shaders',
 		'videos',
 		'images',
 		'stages',

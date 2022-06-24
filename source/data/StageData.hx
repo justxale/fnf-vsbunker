@@ -31,47 +31,35 @@ typedef StageFile = {
 
 class StageData {
 	public static var forceNextDirectory:String = null;
-	public static function loadDirectory(SONG:SwagSong) {
+	public static function loadDirectory(SONG:SwagSong) 
+	{
 		var stage:String = '';
 		if(SONG.stage != null) {
 			stage = SONG.stage;
 		} else if(SONG.song != null) {
 			switch (SONG.song.toLowerCase().replace(' ', '-'))
 			{
-				case 'spookeez' | 'south' | 'monster':
-					stage = 'spooky';
-				case 'pico' | 'blammed' | 'philly' | 'philly-nice':
-					stage = 'philly';
-				case 'milf' | 'satin-panties' | 'high':
-					stage = 'limo';
-				case 'cocoa' | 'eggnog':
-					stage = 'mall';
-				case 'winter-horrorland':
-					stage = 'mallEvil';
-				case 'senpai' | 'roses':
-					stage = 'school';
-				case 'thorns':
-					stage = 'schoolEvil';
-                                case 'test':
-                                        stage = 'stagePixel';
-case 'ugh' | 'guns' | 'stress':
-					stage = 'tank';
+				case 'cold reception' | 'this is not a game' | 'new friend':
+					stage = 'alter';
 				default:
-					stage = 'stage';
+					stage = 'bar';
 			}
 		} else {
-			stage = 'stage';
+			stage = 'bar';
 		}
 
 		var stageFile:StageFile = getStageFile(stage);
 		if(stageFile == null) { //preventing crashes
 			forceNextDirectory = '';
+			trace('not working');
 		} else {
 			forceNextDirectory = stageFile.directory;
+			trace('working 1');
 		}
 	}
 
 	public static function getStageFile(stage:String):StageFile {
+		trace('working 2');
 		var rawJson:String = null;
 		var path:String = Paths.getPreloadPath('stages/' + stage + '.json');
 

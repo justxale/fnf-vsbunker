@@ -1909,7 +1909,7 @@
 		"player3": null,
 		"song": "WonderNo",
 		"validScore": true,
-		"stage": "stage",
+		"stage": "bar",
 		"needsVoices": true,
 		"speed": 3,
 		"bpm": 175

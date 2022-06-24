@@ -3335,7 +3335,7 @@
 		"player3": null,
 		"song": "(56709)",
 		"needsVoices": true,
-		"stage": "stage",
+		"stage": "bar",
 		"validScore": true,
 		"bpm": 168,
 		"speed": 2.9

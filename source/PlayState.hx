@@ -459,10 +459,6 @@ class PlayState extends MusicBeatState
 				filterSUSnotes.push(BlurNotes);
 			}
 
-        trace(filtershud);
-		trace(filtersgame);
-		trace(filtersnotes);
-
         camGame.setFilters(filtersgame);
         camNOTEHUD.setFilters(filtershud);
         camHUD.setFilters(filtershud);
@@ -556,7 +552,7 @@ class PlayState extends MusicBeatState
 				camera_opponent: [0, 0],
 				camera_girlfriend: [0, 0],
 				camera_speed: 1,
-                                cameramovefromnotes: true
+                cameramovefromnotes: true
 			};
 		}
 
@@ -610,7 +606,7 @@ class PlayState extends MusicBeatState
 
 			case 'bar': //Week 2
 				trace("Trying to load a scene");
-				var bg:BGSprite = new BGSprite('bunker/bar', -600, -200, 1, 1, null, null);
+				var bg:BGSprite = new BGSprite('bar', -600, -200, 1, 1, null, null);
 				//bg.loadGraphic('assets/week2/images/bar.png');
 				add(bg);
 				

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="SlavRei New.png">
+<TextureAtlas imagePath="SlavRei.png">
 	<!-- Created with Adobe Animate version 20.5.1.31044 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Rei-idle0000" x="1" y="1" width="453" height="913" frameX="-7" frameY="0" frameWidth="479" frameHeight="913"/>

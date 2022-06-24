@@ -8,7 +8,7 @@
 			"loop": false,
 			"anim": "singLEFT",
 			"fps": 24,
-			"name": "W-left",
+			"name": "rei-left",
 			"indices": []
 		},
 		{
@@ -19,7 +19,7 @@
 			"loop": false,
 			"anim": "singDOWN",
 			"fps": 24,
-			"name": "W-down",
+			"name": "rei-down",
 			"indices": []
 		},
 		{
@@ -30,7 +30,7 @@
 			"loop": false,
 			"anim": "singUP",
 			"fps": 24,
-			"name": "W-up",
+			"name": "rei-up",
 			"indices": []
 		},
 		{
@@ -41,7 +41,7 @@
 			"loop": false,
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "W-right",
+			"name": "rei-right",
 			"indices": []
 		},
 		{
@@ -52,28 +52,12 @@
 			"loop": false,
 			"anim": "idle",
 			"fps": 24,
-			"name": "W-idle",
+			"name": "rei-idle",
 			"indices": []
-		},
-		{
-			"offsets": [
-				0,
-				0
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "idle-loop",
-			"indices": [
-				10,
-				11,
-				12,
-				12
-			],
-			"name": "W-idle"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Slavrei",
+	"image": "characters/SlavRei",
 	"position": [
 		0,
 		0

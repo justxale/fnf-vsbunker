@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Al-Idle"
+			"fps": 24,
+			"name": "Al-Idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				24,
 				-132
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Al-down"
+			"fps": 24,
+			"name": "Al-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				223,
 				-102
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Al-left"
+			"fps": 24,
+			"name": "Al-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				111,
 				78
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Al-up"
+			"fps": 24,
+			"name": "Al-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				26,
 				-193
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Al-right"
+			"fps": 24,
+			"name": "Al-right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -75,8 +75,8 @@
 		79
 	],
 	"camera_position": [
-		-30,
-		-60
+		0,
+		40
 	],
 	"sing_duration": 6.1,
 	"scale": 1

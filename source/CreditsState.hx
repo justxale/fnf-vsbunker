@@ -88,7 +88,7 @@ class CreditsState extends MusicBeatState
 			['Himdish','himdish','Animator','','00d526'],
 			['P4olka','pcholka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','fece00'],
 			['Bluzk','bluzk','','Artist','7e6b6a'],
-		    ['Slavrei','xale','Artist','https://twitter.com/Slav_Rei','f7a300'],   
+		    ['Slavrei','xale','Artist','https://vk.com/slavrei','f7a300'],   
             [''],
 			['Sponsors'],
 			['Nemolevich','nemolevich','Sponsor, Co-director','', '919191'],

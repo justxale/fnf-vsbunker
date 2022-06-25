@@ -1,0 +1,20 @@
+{
+	"songs": [
+		["A Wonderful Encounter", "maskman", [34, 51, 68]]
+	],
+
+	"weekCharacters": [
+		"spooky",
+		"bf",
+		""
+	],
+	"weekBackground": "halloween",
+
+	"storyName": "Bunker dudes",
+	"weekBefore": "week1",
+	"weekName": "Week 2",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

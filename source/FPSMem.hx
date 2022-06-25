@@ -47,7 +47,7 @@ class FPSMem extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-                defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/vcr.ttf").fontName, 14, color);
+        defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/VCR OSD Mono Cyr.ttf").fontName, 14, color);
 		width = 1280;
 		height = 720;
 
@@ -78,18 +78,19 @@ class FPSMem extends TextField
 
 		var currentCount = times.length;
 		currentFPS = currentCount;
-    currentMem = Math.round(System.totalMemory / (1e+6));
+        currentMem = Math.round(System.totalMemory / (1e+6));
 
-		if (currentCount != cacheCount /*&& visible*/)
-		{
-                text = "";
-                   if(showFPS) {
-			   text += "FPS: " + currentFPS + "\n"; }
-                   if(showMem){
-				if(currentMem<0){
-        	                        text += "Memory: Leaking " + Math.abs(currentMem) + " MB\n";
-				}else{
-					text += "Memory: " + currentMem + " MB\n";
+	  if (currentCount != cacheCount /*&& visible*/) {
+		text = "";
+		var s:String = 'FPSMem';
+		if(showFPS) {
+		   text += Translation.string("FPS", s) + ": " + currentFPS + "\n";
+		}
+		if(showMem) {
+			if(currentMem<0) {
+				text += Translation.string("Memory", s) + ": " + Translation.string("Leaking", s) + " " + Math.abs(currentMem) + " " + Translation.string("MB", s) + "\n";
+			} else {
+				text += Translation.string("Memory", s) + ": " + currentMem + " " + Translation.string("MB", s) + "\n";
 				}
 			}
 		//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;

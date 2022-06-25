@@ -81,7 +81,7 @@ class CreditsState extends MusicBeatState
 			['Wondernope','wonder', "Bunker's Owner",'https://www.youtube.com/channel/UC2v3lZHoWcm6g9SbiBT2PKQ','f7a300'],
 			['Kalter','kalter','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','4b4041'],
 			['WHO','pukovich','Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
-			['Xale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'],
+			['AlterXale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'], // I changed my nick just during development lol - AlterXale from now
 			['PurSnake','pursnake','Charter, Code Assistant','https://github.com/PurpleSSSnake', 'b550ff'],	
 			['Tox Miha','toxmiha','Animator','https://twitter.com/Tox_miha','ffa300'],
 			['Tea Mushroom','mushroom','Animator','','cfa6af'],

@@ -1,0 +1,83 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				72,
+				466
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Puk-left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-100,
+				358
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Puk-down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-100,
+				692
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Puk-up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-157,
+				541
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Puk-right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-98,
+				467
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"name": "Puk-idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Puk",
+	"position": [
+		0,
+		320
+	],
+	"healthbar_colors2": [
+		175,
+		102,
+		206
+	],
+	"healthicon": "mashup",
+	"flip_x": false,
+	"healthbar_colors": [
+		95,
+		255,
+		66
+	],
+	"camera_position": [
+		120,
+		-160
+	],
+	"sing_duration": 6.1,
+	"scale": 0.5
+}

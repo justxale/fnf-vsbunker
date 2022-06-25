@@ -73,14 +73,14 @@ class Main extends Sprite
 	
 			if(!ClientPrefs.autoPause)
 				{
-			// Normal global volume when focused
-			if (focusMusicTween != null)
-				focusMusicTween.cancel();
-			focusMusicTween = FlxTween.tween(FlxG.sound, {volume: FlxG.sound.volume * 5}, 0.5);
-	
-			// Bring framerate back when focused
-			FlxG.drawFramerate = ClientPrefs.framerate;
-			FlxG.updateFramerate = ClientPrefs.framerate;
+					// Normal global volume when focused
+					if (focusMusicTween != null)
+						focusMusicTween.cancel();
+					focusMusicTween = FlxTween.tween(FlxG.sound, {volume: FlxG.sound.volume * 5}, 0.5);
+			
+					// Bring framerate back when focused
+					FlxG.drawFramerate = ClientPrefs.framerate;
+					FlxG.updateFramerate = ClientPrefs.framerate;
 				}
 		}
 	

@@ -68,18 +68,20 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menu", null);
 		#end
 
-                WeekData.loadTheFirstEnabledMod();
+        WeekData.loadTheFirstEnabledMod();
 
-                FlxG.watch.addQuick("beatShit", curBeat);
+        FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
-                if (!FlxG.sound.music.playing)
-		        {	
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
-                                FlxG.sound.music.time = 9400;
-				Conductor.changeBPM(102);
-			}
-                FlxG.mouse.visible = false;
-                FlxG.mouse.useSystemCursor = true;
+
+        if (!FlxG.sound.music.playing)
+		{	
+			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
+        	FlxG.sound.music.time = 9400;
+			Conductor.changeBPM(102);
+		}
+
+        FlxG.mouse.visible = false;
+        FlxG.mouse.useSystemCursor = true;
 		Application.current.window.title = Main.appTitle + ' - Main Menu';
 		camGame = new FlxCamera();
 
@@ -167,7 +169,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 		
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Grafex Engine v" + data.EngineData.grafexEngineVersion #if debug + " Debug Prebuild" #end, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Grafex Engine v" + data.EngineData.grafexEngineVersion #if debug + " Debug" #end, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);

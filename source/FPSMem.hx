@@ -22,16 +22,18 @@ import openfl.Lib;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
+
 class FPSMem extends TextField
 {
 	/**
 		The current frame rate, expressed using frames-per-second
 	**/
 	public var currentFPS(default, null):Int;
-        public var currentMem:Float;
+    public var currentMem:Float;
 
-        public static var showMem:Bool=true;
-        public static var showFPS:Bool=true;
+        
+	public static var showMem:Bool=true;      
+	public static var showFPS:Bool=true;
 	@:noCompletion private var cacheCount:Int;
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
@@ -93,7 +95,7 @@ class FPSMem extends TextField
 				text += Translation.string("Memory", s) + ": " + currentMem + " " + Translation.string("MB", s) + "\n";
 				}
 			}
-		//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
+			//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
 		}
 
 		cacheCount = currentCount;

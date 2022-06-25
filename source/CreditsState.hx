@@ -39,7 +39,7 @@ class CreditsState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In the Menu", null);
 		#end
 		persistentUpdate = true;
 		
@@ -81,17 +81,31 @@ class CreditsState extends MusicBeatState
 			['Wondernope','wonder', "Bunker's Owner",'https://www.youtube.com/channel/UC2v3lZHoWcm6g9SbiBT2PKQ','f7a300'],
 			['Kalter','kalter','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','4b4041'],
 			['WHO','pukovich','Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
-			['Xale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'],
+			['Yamahearted','yama','Musician','https://www.youtube.com/Yamahearted','fe3e3c'],
+			['AlterXale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'], // I've changed my nick just during development lol - AlterXale from now
 			['PurSnake','pursnake','Charter, Code Assistant','https://github.com/PurpleSSSnake', 'b550ff'],	
 			['Tox Miha','toxmiha','Animator','https://twitter.com/Tox_miha','ffa300'],
 			['Tea Mushroom','mushroom','Animator','','cfa6af'],
-			['Himdish','himdish','Animator','','00d526'],
-			['P4olka','pcholka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','fece00'],
-			['Bluzk','bluzk','','Artist','7e6b6a'],
-		    ['Slavrei','xale','Artist','https://vk.com/slavrei','f7a300'],   
+			['Himdish','himdish','Artist','','00d526'],
+			['P4olka','pcholka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','fece00'],	  
             [''],
 			['Sponsors'],
-			['Nemolevich','nemolevich','Sponsor, Co-director','', '919191'],
+			['Asy.mp4','sponsors/asy','Sponsor','', 'af3afe'],
+			['Bico','sponsors/bico','Sponsor','', 'fe6165'],
+			['Blebash','sponsors/blebash','Sponsor','', '3a7cff'],
+			['Donatus','sponsors/donatus','Sponsor','', 'e2e2e2'],
+			['DoomSlayer','sponsors/doomslayer','Sponsor','', '376a1e'],
+			['Magnate','sponsors/magnate','Sponsor','', 'ffffff'],
+			['Magomed','sponsors/magomed','Sponsor','', '7d0627'],
+			['Nemolevich','sponsors/nemolevich','Sponsor, Co-director','', 'a6a6a6'],
+			['Niframo','sponsors/niframo','Sponsor','', '67d233'],
+			['Varan','sponsors/varan','Sponsor','', 'c2c2c2'],
+			[''],
+            ['With thanks to:'],
+			['Slavrei','slavrei','Art Assistant','','f7a300'],
+			['Bluzk','bluzk','Art Assistant','','7e6b6a'], 
+			['LenyaTheCat','lenya','Original Icons Artist','', 'ffffff'],
+			['NotGeorg','grafex','Grafex Arrows Skin Artist','', '919191'],
 			[''],
             ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],

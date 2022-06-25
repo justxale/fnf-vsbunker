@@ -479,14 +479,6 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
-                /*
-                var iconPath = Paths.image('icon.png');
-		trace(iconPath);
-		if (Assets.exists(iconPath)) {
-			lime.app.Application.current.window.setIcon(Assets.getImage(iconPath));
-			iconChanged = true;
-		} 
-                */  //Maybe - PurSnake
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
 
@@ -587,22 +579,24 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'alter': //Week 1
-				/*if(!ClientPrefs.lowQuality) {
-					var alterBG = new BGSprite('halloween_bg', -200, 0, ['halloweem bg0', 'halloweem bg lightning strike']);
-				} else {
-					var alterBG = new BGSprite('halloween_bg_low', -200, -100);
-				}
-				add(halloweenBG);
+			case 'alter': //Week 1 | my nick lol - Alter (Xale)
+				var alterBG:BGSprite = new BGSprite('sky above xi', -600, -200, 1, 1);
+				add(alterBG);
 
-				halloweenWhite = new BGSprite(null, -800, -400, 0, 0);
-				halloweenWhite.makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.WHITE);
-				halloweenWhite.alpha = 0;
-				halloweenWhite.blend = ADD;
+				var moon:BGSprite = new BGSprite('THE MOON', -600, -200, 1, 1);
+				add(moon);
 
-				//PRECACHE SOUNDS
-				precacheList.set('thunder_1', 'sound');
-				precacheList.set('thunder_2', 'sound');*/
+				var doorsBG:BGSprite = new BGSprite('More doors', -600, -200, 1, 1);
+				add(doorsBG);
+
+				var fog:BGSprite = new BGSprite('idk what is this', -600, -200, 1, 1);
+				add(fog);
+
+				var doorsFG:BGSprite = new BGSprite('Doors', -600, -200, 1, 1);
+				add(doorsFG);
+
+				var stones:BGSprite = new BGSprite('stones', -600, -200, 1, 1);
+				add(stones);
 
 			case 'bar': //Week 2
 				trace("Trying to load a scene");

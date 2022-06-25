@@ -22,16 +22,18 @@ import openfl.Lib;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
+
 class FPSMem extends TextField
 {
 	/**
 		The current frame rate, expressed using frames-per-second
 	**/
 	public var currentFPS(default, null):Int;
-        public var currentMem:Float;
+    public var currentMem:Float;
 
-        public static var showMem:Bool=true;
-        public static var showFPS:Bool=true;
+        
+	public static var showMem:Bool=true;      
+	public static var showFPS:Bool=true;
 	@:noCompletion private var cacheCount:Int;
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
@@ -47,7 +49,7 @@ class FPSMem extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-                defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/vcr.ttf").fontName, 14, color);
+        defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/vcr.ttf").fontName, 14, color);
 		width = 1280;
 		height = 720;
 
@@ -87,12 +89,12 @@ class FPSMem extends TextField
 			   text += "FPS: " + currentFPS + "\n"; }
                    if(showMem){
 				if(currentMem<0){
-        	                        text += "Memory: Leaking " + Math.abs(currentMem) + " MB\n";
+        	        text += "Memory: Leaking " + Math.abs(currentMem) + " MB\n";
 				}else{
 					text += "Memory: " + currentMem + " MB\n";
 				}
 			}
-		//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
+			//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
 		}
 
 		cacheCount = currentCount;

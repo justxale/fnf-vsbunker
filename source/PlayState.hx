@@ -2353,14 +2353,14 @@ function tankIntro()
 				}
 
            if (curSong == 'Test')
-		{
-                                pxgfdanced = !pxgfdanced;
-
+			{
+        	    pxgfdanced = !pxgfdanced;
+		
 				if (pxgfdanced)
 					gfPixel.animation.play('danceRight');
 				else
 					gfPixel.animation.play('danceLeft');
-		}
+			}
 
 				// head bopping for bg characters on Mall
 				if(curStage == 'mall') {
@@ -2465,7 +2465,7 @@ function tankIntro()
             
 	}
 
-public function addBehindGF(obj:FlxObject)
+	public function addBehindGF(obj:FlxObject)
 	{
 		insert(members.indexOf(gfGroup), obj);
 	}
@@ -2479,7 +2479,7 @@ public function addBehindGF(obj:FlxObject)
 	}
 
 
-        public function clearNotesBefore(time:Float)
+    public function clearNotesBefore(time:Float)
 	{
 		var i:Int = unspawnNotes.length - 1;
 		while (i >= 0) {
@@ -2491,7 +2491,7 @@ public function addBehindGF(obj:FlxObject)
 				daNote.ignoreNote = true;
 
 
-if(modchartObjects.exists('note${daNote.ID}'))modchartObjects.remove('note${daNote.ID}');
+				if(modchartObjects.exists('note${daNote.ID}')) modchartObjects.remove('note${daNote.ID}');
 				daNote.kill();
 				unspawnNotes.remove(daNote);
 				daNote.destroy();
@@ -2508,7 +2508,7 @@ if(modchartObjects.exists('note${daNote.ID}'))modchartObjects.remove('note${daNo
 				daNote.visible = false;
 				daNote.ignoreNote = true;
 
-if(modchartObjects.exists('note${daNote.ID}'))modchartObjects.remove('note${daNote.ID}');
+				if(modchartObjects.exists('note${daNote.ID}')) modchartObjects.remove('note${daNote.ID}');
 				daNote.kill();
 				notes.remove(daNote, true);
 				daNote.destroy();
@@ -2530,7 +2530,7 @@ if(modchartObjects.exists('note${daNote.ID}'))modchartObjects.remove('note${daNo
 		vocals.time = time;
 		vocals.play();
 		Conductor.songPosition = time;
-songTime = time;
+		songTime = time;
 	}
 
 	function startNextDialogue() {
@@ -2557,7 +2557,7 @@ songTime = time;
 		FlxG.sound.music.onComplete = onSongComplete;
 		vocals.play();
 
-                if(startOnTime > 0)
+        if(startOnTime > 0)
 		{
 			setSongTime(startOnTime - 500);
 		}
@@ -3431,7 +3431,7 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 			{
 				var dunceNote:Note = unspawnNotes[0];
 				notes.insert(0, dunceNote);
-dunceNote.spawned=true;
+				dunceNote.spawned=true;
 				callOnLuas('onSpawnNote', [notes.members.indexOf(dunceNote), dunceNote.noteData, dunceNote.noteType, dunceNote.isSustainNote, dunceNote.ID]);
 
 				var index:Int = unspawnNotes.indexOf(dunceNote);
@@ -3451,7 +3451,8 @@ dunceNote.spawned=true;
 			}
 
 			var fakeCrochet:Float = (60 / SONG.bpm) * 1000;
-  var off:Float = 0;
+  			var off:Float = 0;
+
 			if(Note.downScrollHoldEndOffset.exists(ClientPrefs.noteSkin))
 			{
 			off = Note.downScrollHoldEndOffset.get(ClientPrefs.noteSkin);
@@ -3572,7 +3573,7 @@ dunceNote.spawned=true;
 					daNote.active = false;
 					daNote.visible = false;
 
-if(modchartObjects.exists('note${daNote.ID}'))modchartObjects.remove('note${daNote.ID}');
+					if(modchartObjects.exists('note${daNote.ID}') )modchartObjects.remove('note${daNote.ID}');
 					daNote.kill();
 					notes.remove(daNote, true);
 					daNote.destroy();

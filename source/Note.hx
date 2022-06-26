@@ -267,14 +267,14 @@ if(prevNote!=null)
 					var holdScale:Float = 1;
 					if(holdArrowScales.exists(ClientPrefs.noteSkin))
 					{
-                                                if(prevNote.deftype)
-                                                {
-						holdScale = 1;
-                                                }
-                                                else
-                                                {
-                                                holdScale = holdArrowScales.get(ClientPrefs.noteSkin);
-                                                }
+                        if(prevNote.deftype)
+                        {
+							holdScale = 1;
+                        }
+                        else
+                        {
+                        	holdScale = holdArrowScales.get(ClientPrefs.noteSkin);
+                        }
 					}
 					prevNote.scale.y *= holdScale;
 				}
@@ -296,14 +296,14 @@ if(prevNote!=null)
 		if(prefix == null) prefix = '';
 		if(texture == null) texture = '';
 		if(suffix == null) suffix = '';
-                if(deftype == null) deftype = false;
+        if(deftype == null) deftype = false;
 		
 		var coolswag:String = '';
 		if(ClientPrefs.noteSkin != 'Default')
 		{
 	        if(deftype)
                 coolswag = '';
-                else
+            else
                 coolswag = '-' + ClientPrefs.noteSkin.toLowerCase().replace(' ', '-');
 		}
                 var skin:String = texture;
@@ -362,9 +362,9 @@ if(prevNote!=null)
 			scale.y = lastScaleY;
 			if(ClientPrefs.keSustains) {
 				if(prevNote.deftype){
-                                scale.y *= 1;}
-                                else{
-                                 scale.y *= 0.75;}
+                    scale.y *= 1;}
+                else{
+                    scale.y *= 0.75;}
 			}
 		}
 		updateHitbox();

@@ -103,7 +103,6 @@ class CreditsState extends MusicBeatState
 			[''],
             ['With thanks to:'],
 			['Slavrei','slavrei','Art Assistant','','f7a300'],
-			['Bluzk','bluzk','Art Assistant','','7e6b6a'], 
 			['LenyaTheCat','lenya','Original Icons Artist','', 'ffffff'],
 			['NotGeorg','grafex','Grafex Arrows Skin Artist','', '919191'],
 			[''],

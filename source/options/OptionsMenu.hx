@@ -129,70 +129,70 @@ class OptionsMenu extends FlxSubState
 
 
 		options = [
-			new OptionCata(50, 40, Translation.string('Gameplay','OptionsMenu'), [	
-				//new OffsetThing(Translation.string('Change the note visual offset (how many milliseconds a note looks like it is offset in a chart)','OptionsMenu')),
-				new HitSoundOption(Translation.string("Adds 'sound' on note hits.",'OptionsMenu')),
-				new GhostTapOption(Translation.string('Toggle counting pressing a directional input when no arrow is there as a miss.','OptionsMenu')),
-				new DownscrollOption(Translation.string('Toggle making the notes scroll down rather than up.','OptionsMenu')),
-				new ResetButtonOption(Translation.string('Toggle pressing R to gameover.','OptionsMenu')),
-				new InstantRespawn(Translation.string('Toggle if you instantly respawn after dying.','OptionsMenu')),
-				new CamZoomOption(Translation.string('Toggle the camera zoom in-game.','OptionsMenu')),
+			new OptionCata(50, 40, 'Gameplay', [	
+				//new OffsetThing('Change the note visual offset (how many milliseconds a note looks like it is offset in a chart)'),
+				new HitSoundOption("Adds 'sound' on note hits."),
+				new GhostTapOption('Toggle counting pressing a directional input when no arrow is there as a miss.'),
+				new DownscrollOption('Toggle making the notes scroll down rather than up.'),
+				new ResetButtonOption('Toggle pressing R to gameover.'),
+				new InstantRespawn('Toggle if you instantly respawn after dying.'),
+				new CamZoomOption('Toggle the camera zoom in-game.'),
                 new DFJKOption(),
                 new NotesOption(),
                 new Customizeption(),
-				new Judgement(Translation.string('Create a custom judgement preset','OptionsMenu')),
-				new Shouldcameramove(Translation.string('Moves camera on opponent/player note hits.','OptionsMenu')),
+				new Judgement('Create a custom judgement preset'),
+				new Shouldcameramove('Moves camera on opponent/player note hits.'),
 			]),
-			new OptionCata(286, 40, Translation.string('Appearance','OptionsMenu'), [
-				new NoteskinOption(Translation.string('Change your current noteskin','OptionsMenu')),
-				new AccTypeOption(Translation.string('Change your current accuracy type you want!','OptionsMenu')),
-                new IconBop(Translation.string('Change icon bopping type','OptionsMenu')),
-				new MiddleScrollOption(Translation.string('Put your lane in the center or on the right.','OptionsMenu')), 
-				new HideOppStrumsOption(Translation.string('Shows/Hides opponent strums on screen.(RESTART SONG)','OptionsMenu')),
-				new MissSoundsOption(Translation.string("Toggle miss sounds playing when you don't hit a note.",'OptionsMenu')),
-				new MissAnimsOption(Translation.string("Toggle miss animations playing when you don't hit a note.",'OptionsMenu')),
-                new ShowSplashes(Translation.string('Show particles on SICK hit.','OptionsMenu')),
-                new MicedUpSusOption(Translation.string('Enables filter like in MicedUp Engine.','OptionsMenu')),
+			new OptionCata(286, 40, 'Appearance', [
+				new NoteskinOption('Change your current noteskin'),
+				new AccTypeOption('Change your current accuracy type you want!'),
+                new IconBop('Change icon bopping type'),
+				new MiddleScrollOption('Put your lane in the center or on the right.'), 
+				new HideOppStrumsOption('Shows/Hides opponent strums on screen.(RESTART SONG)'),
+				new MissSoundsOption("Toggle miss sounds playing when you don't hit a note."),
+				new MissAnimsOption("Toggle miss animations playing when you don't hit a note."),
+                new ShowSplashes('Show particles on SICK hit.'),
+                new MicedUpSusOption('Enables filter like in MicedUp Engine.'),
                // new SustainsAlpha("Change Sustain Notes Alpha."),
-				new HealthBarOption(Translation.string('Toggles health bar visibility','OptionsMenu')),
-				new JudgementCounter(Translation.string("Show your judgements that you've gotten in the song",'OptionsMenu')),
-				new LaneUnderlayOption(Translation.string('How transparent your lane is, higher = more visible.','OptionsMenu')),
-                new HideHud(Translation.string('Shows to you hud.','OptionsMenu')),
-                new ShowCombo(Translation.string('Combo sprite appearance.','OptionsMenu')),
-                new ScoreZoom(Translation.string("Zoom score on 2'nd beat.",'OptionsMenu')),
-                new HealthBarAlpha(Translation.string('Healthbar Transparceny.','OptionsMenu')),
-                new BlurNotes(Translation.string("(CONTAINS FPS ISSUES)/Make notes a bit 'blurred'.",'OptionsMenu')),
-			    new TimeBarType(Translation.string("Change the song's current position bar.",'OptionsMenu')),
+				new HealthBarOption('Toggles health bar visibility'),
+				new JudgementCounter("Show your judgements that you've gotten in the song"),
+				new LaneUnderlayOption('How transparent your lane is, higher = more visible.'),
+                new HideHud('Shows to you hud.'),
+                new ShowCombo('Combo sprite appearance.'),
+                new ScoreZoom("Zoom score on 2'nd beat."),
+                new HealthBarAlpha('Healthbar Transparceny.'),
+                new BlurNotes("(CONTAINS FPS ISSUES)/Make notes a bit 'blurred'."),
+			    new TimeBarType("Change the song's current position bar."),
 			]),
-			new OptionCata(522, 40, Translation.string('Misc','OptionsMenu'), [
-				new FlashingLightsOption(Translation.string('Toggle flashing lights that can cause epileptic seizures and strain.','OptionsMenu')),
-				new ColorBlindOption(Translation.string('You can set colorblind filter (makes the game more playable for colorblind people).','OptionsMenu')),
-				new FPSOption(Translation.string('Toggle the FPS Counter.','OptionsMenu')),
-                new MEMOption(Translation.string('Toggle the MEM Counter.','OptionsMenu')),
+			new OptionCata(522, 40, 'Misc', [
+				new FlashingLightsOption('Toggle flashing lights that can cause epileptic seizures and strain.'),
+				new ColorBlindOption('You can set colorblind filter (makes the game more playable for colorblind people).'),
+				new FPSOption('Toggle the FPS Counter.'),
+                new MEMOption('Toggle the MEM Counter.'),
 				#if desktop
-				new FPSCapOption(Translation.string('Change your FPS Cap.','OptionsMenu')),
+				new FPSCapOption('Change your FPS Cap.'),
 				#end
-				new AutoPause(Translation.string('Stops game, when its unfocused','OptionsMenu')),
-                new AntialiasingOption(Translation.string('Toggle antialiasing, improving graphics quality at a slight performance penalty.','OptionsMenu')),
-				new QualityLow(Translation.string('Turn off some object on stages','OptionsMenu')),
-				new Imagepersist(Translation.string('Images loaded will stay in memory until the game is closed.','OptionsMenu')),
-				new GreenScreenMode(Translation.string('Makes screen green.','OptionsMenu')),
+				new AutoPause('Stops game, when its unfocused'),
+                new AntialiasingOption('Toggle antialiasing, improving graphics quality at a slight performance penalty.'),
+				new QualityLow('Turn off some object on stages'),
+				new Imagepersist('Images loaded will stay in memory until the game is closed.'),
+				new GreenScreenMode('Makes screen green.'),
         		]),
-			new OptionCata(758, 40, Translation.string('Extra','OptionsMenu'), [
-				new AutoSave(Translation.string('Turn AutoSaves your chating in Charting state.','OptionsMenu')),
-				new AutoSaveInt(Translation.string('Change Chart AutoSave Interval.','OptionsMenu')),
-				new SkipTitleOption(Translation.string('Skips TitleState.','OptionsMenu')),
-				new PauseCountDownOption(Translation.string("Toggle countdown after pressing 'Resume' in Pause Menu.",'OptionsMenu')),
+			new OptionCata(758, 40, 'Extra', [
+				new AutoSave('Turn AutoSaves your chating in Charting state.'),
+				new AutoSaveInt('Change Chart AutoSave Interval.'),
+				new SkipTitleOption('Skips TitleState.'),
+				new PauseCountDownOption("Toggle countdown after pressing 'Resume' in Pause Menu."),
 			]),
-			new OptionCata(994, 40, Translation.string('Language','OptionsMenu'), [
-				new LangOption(Translation.string('Language.','OptionsMenu')),
+			new OptionCata(994, 40, 'Language', [
+				new LangOption('Language.'),
 			]),
 			new OptionCata(-1, 125, "Editing Keybinds", [/* nothing here lol - PurSnake*/], true),
 
 			new OptionCata(-1, 125, "Editing Judgements", [
-				new SickMSOption(Translation.string('How many milliseconds are in the SICK hit window','OptionsMenu')),
-				new GoodMsOption(Translation.string('How many milliseconds are in the GOOD hit window','OptionsMenu')),
-				new BadMsOption(Translation.string('How many milliseconds are in the BAD hit window','OptionsMenu')),
+				new SickMSOption('How many milliseconds are in the SICK hit window'),
+				new GoodMsOption('How many milliseconds are in the GOOD hit window'),
+				new BadMsOption('How many milliseconds are in the BAD hit window'),
 			], true)
 		];
 
@@ -345,9 +345,9 @@ class OptionsMenu extends FlxSubState
 
 		if (!isInCat)
 		{
-			object.text = "> " + option.getValue();
+			//object.text = "> " + option.getValue();
 
-			descText.text = option.getDescription();
+			descText.text = Translation.string(option.getDescription(), 'OptionsMenu');
 		}
 		//Debug.logTrace("Changed opt: " + selectedOptionIndex);
 
@@ -379,6 +379,14 @@ public static function openNotesState()
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		for (c in options) {
+			c.titleObject.text = Translation.string(c.title, 'OptionsMenu');
+			for (o in 0...c.optionObjects.length) {
+				c.optionObjects.members[o].text = c.options[o].getValue();
+			}
+		}
+		descText.text = Translation.string(selectedOption.getDescription(), 'OptionsMenu');
 
 		if(FlxG.keys.justPressed.F11)
 			{
@@ -494,7 +502,7 @@ public static function openNotesState()
 							FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);
 							selectedOption.waitingType = false;
 							var object = selectedCat.optionObjects.members[selectedOptionIndex];
-							object.text = "> " + selectedOption.getValue();
+							//object.text = "> " + selectedOption.getValue();
 							//Debug.logTrace("New text: " + object.text);
 							return;
 						}
@@ -502,7 +510,7 @@ public static function openNotesState()
 						{
 							var object = selectedCat.optionObjects.members[selectedOptionIndex];
 							selectedOption.onType(gamepad == null ? FlxG.keys.getIsDown()[0].ID.toString() : gamepad.firstJustPressedID());
-							object.text = "> " + selectedOption.getValue();
+							//object.text = "> " + selectedOption.getValue();
 						//	Debug.logTrace("New text: " + object.text);
 						}
 					}
@@ -518,7 +526,7 @@ public static function openNotesState()
 						{
 							ClientPrefs.saveSettings();
 
-							object.text = "> " + selectedOption.getValue();
+							//object.text = "> " + selectedOption.getValue();
 						}
 					}
 
@@ -605,7 +613,7 @@ public static function openNotesState()
 
 						ClientPrefs.saveSettings();
 
-						object.text = "> " + selectedOption.getValue();
+						//object.text = "> " + selectedOption.getValue();
 						//Debug.logTrace("New text: " + object.text);
 					}
 					else if (left)
@@ -616,7 +624,7 @@ public static function openNotesState()
 
 						ClientPrefs.saveSettings();
 
-						object.text = "> " + selectedOption.getValue();
+						//object.text = "> " + selectedOption.getValue();
 						//Debug.logTrace("New text: " + object.text);
 					}
 

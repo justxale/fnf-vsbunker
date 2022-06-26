@@ -129,6 +129,10 @@
         "Options.TitleState_Skipping" : "Пропуск титульного экрана",
         "Options.Minutes" : "Минут(а)",
         "LanguageName.Russian": "Русский",
-        "LanguageName.English": "Английский"
+        "LanguageName.English": "Английский",
+        "FPSMem.FPS": "ФПС",
+        "FPSMem.Memory": "Память",
+        "FPSMem.MB": "МБ",
+        "FPSMem.Leaking": "Утечка"
     }
 }

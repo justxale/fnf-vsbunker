@@ -2572,11 +2572,11 @@ function tankIntro()
 		songLength = FlxG.sound.music.length;
 		FlxTween.tween(timeBar, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
 		FlxTween.tween(timeTxt, {alpha: 1}, 0.5, {ease: FlxEase.circOut});
-                FlxTween.tween(laneunderlayOpponent, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
-                FlxTween.tween(laneunderlay, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
+        FlxTween.tween(laneunderlayOpponent, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
+        FlxTween.tween(laneunderlay, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
 
 
-switch(curStage)
+		switch(curStage)
 		{
 			case 'tank':
 				if(!ClientPrefs.lowQuality) tankWatchtower.dance();
@@ -2686,7 +2686,7 @@ switch(curStage)
 				var susLength:Float = swagNote.sustainLength;
 
 				susLength = susLength / Conductor.stepCrochet;
-swagNote.ID = unspawnNotes.length;
+				swagNote.ID = unspawnNotes.length;
 				modchartObjects.set('note${swagNote.ID}', swagNote);
 				unspawnNotes.push(swagNote);
 
@@ -2700,10 +2700,10 @@ swagNote.ID = unspawnNotes.length;
 						sustainNote.mustPress = gottaHitNote;
 						sustainNote.gfNote = (section.gfSection && (songNotes[1]<4));
 						sustainNote.noteType = swagNote.noteType;
-sustainNote.ID = unspawnNotes.length;
+						sustainNote.ID = unspawnNotes.length;
 						modchartObjects.set('note${sustainNote.ID}', sustainNote);
 						sustainNote.scrollFactor.set();
-swagNote.tail.push(sustainNote);
+						swagNote.tail.push(sustainNote);
 						sustainNote.parent = swagNote;
 						unspawnNotes.push(sustainNote);
 
@@ -2786,7 +2786,7 @@ swagNote.tail.push(sustainNote);
 				var newCharacter:String = event.value2;
 				addCharacterToList(newCharacter, charType);
 
-case 'Dadbattle Spotlight':
+			case 'Dadbattle Spotlight':
 				dadbattleBlack = new BGSprite(null, -800, -400, 0, 0);
 				dadbattleBlack.makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 				dadbattleBlack.alpha = 0.25;
@@ -2821,7 +2821,7 @@ case 'Dadbattle Spotlight':
 				dadbattleSmokes.add(smoke);
 
 
-		case 'Philly Glow':
+			case 'Philly Glow':
 				blammedLightsBlack = new FlxSprite(FlxG.width * -0.5, FlxG.height * -0.5).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 				blammedLightsBlack.visible = false;
 				insert(members.indexOf(phillyStreet), blammedLightsBlack);
@@ -2896,12 +2896,12 @@ case 'Dadbattle Spotlight':
 
 			if (player == 1)
 			{
-modchartObjects.set("playerStrum" + i, babyArrow);
+				modchartObjects.set("playerStrum" + i, babyArrow);
 				playerStrums.add(babyArrow);
 			}
 			else
 			{
-modchartObjects.set("opponentStrum" + i, babyArrow);
+				modchartObjects.set("opponentStrum" + i, babyArrow);
 	    	    if(ClientPrefs.middleScroll)
 				{
 					babyArrow.x += 310;
@@ -3003,11 +3003,11 @@ modchartObjects.set("opponentStrum" + i, babyArrow);
 			#if desktop
 			if (startTimer != null && startTimer.finished)
 			{
-                                DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, SONG.player2, true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
+                DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, SONG.player2, true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
 			}
 			else
 			{
-                                DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, SONG.player2);
+				DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, SONG.player2);
 			}
 			#end
 		}

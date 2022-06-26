@@ -18,8 +18,7 @@ typedef EventNote = {
 }
 class Note extends FlxSprite
 { 
-
-public var extraData:Map<String,Dynamic> = [];
+	public var extraData:Map<String,Dynamic> = [];
 	public var strumTime:Float = 0;
 
 	public var mustPress:Bool = false;
@@ -32,7 +31,7 @@ public var extraData:Map<String,Dynamic> = [];
 	public var noteWasHit:Bool = false;
 	public var prevNote:Note;
 
-public var nextNote:Note;
+	public var nextNote:Note;
 
 	public var spawned:Bool = false;
 
@@ -65,7 +64,7 @@ public var nextNote:Note;
 	public var noteSplashHue:Float = 0;
 	public var noteSplashSat:Float = 0;
 	public var noteSplashBrt:Float = 0;
-        public var deftype:Bool;      
+    public var deftype:Bool;      
 
 	public var offsetX:Float = 0;
 	public var offsetY:Float = 0;
@@ -86,12 +85,12 @@ public var nextNote:Note;
 	public var texture(default, set):String = null;
 
 	public var noAnimation:Bool = false;
-public var noMissAnimation:Bool = false;
+	public var noMissAnimation:Bool = false;
 	public var hitCausesMiss:Bool = false;
 	public var distance:Float = 2000; //plan on doing scroll directions soon -bb
-public var multSpeed(default, set):Float = 1;
+	public var multSpeed(default, set):Float = 1;
 
-private function set_multSpeed(value:Float):Float {
+	private function set_multSpeed(value:Float):Float {
 		resizeByRatio(value / multSpeed);
 		multSpeed = value;
 		trace('fuck cock');
@@ -107,7 +106,7 @@ private function set_multSpeed(value:Float):Float {
 		}
 	}
 
-        public static var holdArrowScales:Map<String, Float> = [
+    public static var holdArrowScales:Map<String, Float> = [
 		'Future'	=> 0.565,
 		'Chip'		=> 0.565
 	];
@@ -136,7 +135,7 @@ private function set_multSpeed(value:Float):Float {
 				case 'Hurt Note':
 					ignoreNote = mustPress;
 					reloadNote('HURT','','', true);
-                                        multSpeed = 1.1;
+                    multSpeed = 1.1;
 					noteSplashTexture = 'HURTnoteSplashes';
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
@@ -149,7 +148,7 @@ private function set_multSpeed(value:Float):Float {
 					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
-                                        noMissAnimation = true;
+                    noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
 			}

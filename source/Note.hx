@@ -1,4 +1,4 @@
-package;
+	package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -151,6 +151,23 @@ class Note extends FlxSprite
                     noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
+				case 'Blue Note':
+					reloadNote('Blue','','', true);
+					ignoreNote = mustPress;
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+				case 'Orange Note':
+					reloadNote('Orange','','', true);
+					ignoreNote = mustPress;
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+				case 'Pixel Note':
+					reloadNote('Orange','','', true);
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
 			}
 			noteType = value;
 		}
@@ -158,10 +175,10 @@ class Note extends FlxSprite
 		noteSplashSat = colorSwap.saturation;
 		noteSplashBrt = colorSwap.brightness;
 		return value;
-	}
+		}
         var lastNoteOffsetXForPixelAutoAdjusting:Float = 0;
-	var lastNoteScaleToo:Float = 1;
-	public var originalHeightForCalcs:Float = 6;
+		var lastNoteScaleToo:Float = 1;
+		public var originalHeightForCalcs:Float = 6;
 
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inEditor:Bool = false)
 	{
@@ -207,7 +224,7 @@ class Note extends FlxSprite
 
 		// trace(prevNote);
 
-if(prevNote!=null)
+		if(prevNote!=null)
 			prevNote.nextNote = this;
 
 		if (isSustainNote && prevNote != null)
@@ -260,9 +277,9 @@ if(prevNote!=null)
 
 				if(PlayState.isPixelStage) {
 					prevNote.scale.y *= 1.19;
-                                        prevNote.scale.y *= (6 / height); //Auto adjust note size
+                    prevNote.scale.y *= (6 / height); //Auto adjust note size
 				}
-                                else {
+                else {
 					var holdScale:Float = 1;
 					if(holdArrowScales.exists(ClientPrefs.noteSkin))
 					{
@@ -305,7 +322,7 @@ if(prevNote!=null)
             else
                 coolswag = '-' + ClientPrefs.noteSkin.toLowerCase().replace(' ', '-');
 		}
-                var skin:String = texture;
+        var skin:String = texture;
 		if(texture.length < 1) {
 			skin = PlayState.SONG.arrowSkin;
 			if(skin == null || skin.length < 1) {

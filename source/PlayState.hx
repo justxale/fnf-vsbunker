@@ -5689,12 +5689,11 @@ if (iconP2.animation.frames == 3)
 			}
 
 		function getCamOffsets()
-				{
-					dadPos[0] = dad.getMidpoint().x + 150 + dad.cameraPosition[0];
-					dadPos[1] = dad.getMidpoint().y - 100 + dad.cameraPosition[1];
-
-					bfPos[0] = boyfriend.getMidpoint().x - 100 - boyfriend.cameraPosition[0];
-					bfPos[1] = boyfriend.getMidpoint().y - 100 + boyfriend.cameraPosition[1];
-				}
+		{
+			dadPos[0] = dad.getMidpoint().x + 150 + dad.cameraPosition[0];
+			dadPos[1] = dad.getMidpoint().y - 100 + dad.cameraPosition[1]
+			bfPos[0] = boyfriend.getMidpoint().x - 100 - boyfriend.cameraPosition[0];
+			bfPos[1] = boyfriend.getMidpoint().y - 100 + boyfriend.cameraPosition[1];
+		}
 }
 

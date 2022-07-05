@@ -1,107 +1,107 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "t-idle 1"
+			"fps": 24,
+			"name": "t-idle 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				28,
 				-3
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "t-left 1"
+			"fps": 24,
+			"name": "t-left 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				25,
 				-3
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "t-down 1"
+			"fps": 24,
+			"name": "t-down 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-3,
 				18
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "t-up 1"
+			"fps": 24,
+			"name": "t-up 1",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-3,
 				-3
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "t-right 1"
-		},
-		{
-			"offsets": [
-				3,
-				10
-			],
-			"indices": [],
 			"fps": 24,
-			"anim": "singLEFTmiss",
-			"loop": false,
-			"name": "left-miss 1"
+			"name": "t-right 1",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWNmiss",
 			"loop": false,
-			"name": "down-miss 1"
-		},
-		{
-			"offsets": [
-				13,
-				17
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singUPmiss",
-			"loop": false,
-			"name": "up-miss 1"
-		},
-		{
 			"offsets": [
 				2,
-				18
+				88
 			],
-			"indices": [],
+			"anim": "singLEFTmiss",
 			"fps": 24,
-			"anim": "singRIGHTmiss",
+			"name": "left-miss 1",
+			"indices": []
+		},
+		{
 			"loop": false,
-			"name": "right-miss 1"
+			"offsets": [
+				-4,
+				57
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "down-miss 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				16,
+				97
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "up-miss 1",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				71
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "right-miss 1",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Wonderchan",
+	"image": "characters/Wonderchan1",
 	"position": [
 		0,
 		0

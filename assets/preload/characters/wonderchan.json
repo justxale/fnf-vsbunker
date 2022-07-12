@@ -5,10 +5,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "idle",
-			"loop": false,
+			"indices": [],
 			"name": "t-idle 1"
 		},
 		{
@@ -16,10 +16,10 @@
 				28,
 				-3
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
+			"indices": [],
 			"name": "t-left 1"
 		},
 		{
@@ -27,10 +27,10 @@
 				25,
 				-3
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
+			"indices": [],
 			"name": "t-down 1"
 		},
 		{
@@ -38,10 +38,10 @@
 				-3,
 				18
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
+			"indices": [],
 			"name": "t-up 1"
 		},
 		{
@@ -49,74 +49,74 @@
 				-3,
 				-3
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
+			"indices": [],
 			"name": "t-right 1"
 		},
 		{
 			"offsets": [
-				3,
-				10
+				2,
+				88
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFTmiss",
-			"loop": false,
+			"indices": [],
 			"name": "left-miss 1"
 		},
 		{
 			"offsets": [
-				0,
-				0
+				-4,
+				57
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
+			"indices": [],
 			"name": "down-miss 1"
 		},
 		{
 			"offsets": [
-				13,
-				17
+				16,
+				97
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singUPmiss",
-			"loop": false,
+			"indices": [],
 			"name": "up-miss 1"
 		},
 		{
 			"offsets": [
-				2,
-				18
+				-4,
+				71
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHTmiss",
-			"loop": false,
+			"indices": [],
 			"name": "right-miss 1"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Wonderchan",
+	"image": "characters/Wonderchan1",
 	"position": [
 		0,
 		0
 	],
 	"healthbar_colors2": [
-		40,
-		60,
-		69
+		120,
+		0,
+		249
 	],
-	"healthicon": "",
+	"healthicon": "wonderchan",
 	"flip_x": true,
 	"healthbar_colors": [
-		40,
-		60,
-		69
+		0,
+		220,
+		9
 	],
 	"camera_position": [
 		0,

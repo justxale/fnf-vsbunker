@@ -1,34 +1,21 @@
 package;
 
+import lime.ui.WindowAttributes;
 #if desktop
 import Discord.DiscordClient;
-import sys.thread.Thread;
 #end
 import flixel.FlxG;
 import flixel.addons.effects.FlxTrail;
 import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.input.keyboard.FlxKey;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.addons.transition.TransitionData;
 import haxe.Json;
 import ColorblindFilters;
-import openfl.display.Bitmap;
 import data.WeekData;
-import openfl.display.BitmapData;
-import sys.FileSystem;
-import sys.io.File;
 import flixel.addons.display.FlxBackdrop;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
-import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
 import flixel.math.FlxMath;
-import flixel.system.FlxSound;
-import flixel.system.ui.FlxSoundTray;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -36,7 +23,8 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
-import lime.ui.WindowAttributes;
+
+import Sys;
 
 using StringTools;
 
@@ -59,14 +47,16 @@ class TitleState extends MusicBeatState
 	public static var volumeUpKeys:Array<FlxKey> = [FlxKey.NUMPADPLUS, FlxKey.PLUS];
 
 	public static var initialized:Bool = false;
-        public static var fromMainMenu:Bool = false;
-        public static var skipped:Bool = false;
+    public static var fromMainMenu:Bool = false;
+    public static var skipped:Bool = false;
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
+
+	var attributes:WindowAttributes;
 
 	var curWacky:Array<String> = [];
 
@@ -82,8 +72,14 @@ class TitleState extends MusicBeatState
 	
 	public static var updateVersion:String = '';
 
+	var batPath:String = '';
+
 	override public function create():Void
 	{
+		attributes = {x: 0, y: 0, title:'Help me pls', width: 1280, height: 720};
+		batPath = StringPopper.stringPop(Sys.getCwd()) + '\\assets\\bunker\\';
+		//Sys.command("start " + batPath + "script.bat");
+		trace("start " + batPath + "script.bat");
         Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 

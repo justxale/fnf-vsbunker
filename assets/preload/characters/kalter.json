@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				28,
-				291
+				0,
+				0
 			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "kalter-idle"
+		},
+		{
+			"offsets": [
+				76,
+				-4
+			],
+			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Kalter-left"
+			"loop": false,
+			"name": "kalter-left"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-9,
-				113
+				-3,
+				-132
 			],
+			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Kalter-down"
+			"loop": false,
+			"name": "kalter-down"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-57,
-				366
+				8,
+				120
 			],
+			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Kalter-up"
+			"loop": false,
+			"name": "kalter-up"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				272,
-				-5
+				-14,
+				14
 			],
+			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Kalter-right"
-		},
-		{
-			"loop": true,
-			"offsets": [
-				-94,
-				239
-			],
-			"anim": "idle",
-			"fps": 24,
-			"name": "Kalter-idle",
-			"indices": []
+			"loop": false,
+			"name": "Kalter-rightt"
 		}
 	],
 	"no_antialiasing": false,
@@ -63,21 +63,21 @@
 		0
 	],
 	"healthbar_colors2": [
-		175,
-		102,
-		206
+		161,
+		161,
+		161
 	],
-	"healthicon": "kalter",
+	"healthicon": "face",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		161,
+		161,
+		161
 	],
 	"camera_position": [
-		0,
-		0
+		110,
+		230
 	],
 	"sing_duration": 6.1,
-	"scale": 0.8
+	"scale": 0.75
 }

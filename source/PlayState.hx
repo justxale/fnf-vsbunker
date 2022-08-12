@@ -601,7 +601,7 @@ class PlayState extends MusicBeatState
 			case 'bar': //Week 2
 				trace("Trying to load a scene");
 				var bg:BGSprite = new BGSprite('bar', -600, -200, 1, 1, null, null);
-				//bg.loadGraphic('assets/week2/images/bar.png');
+				bg.scale.set(3, 3);
 				add(bg);
 		}
 

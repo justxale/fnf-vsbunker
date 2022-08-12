@@ -1,0 +1,61 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				37,
+				11
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "firstDeath",
+			"loop": false,
+			"name": "Bf-dies-bunker"
+		},
+		{
+			"offsets": [
+				37,
+				27
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathConfirm",
+			"loop": false,
+			"name": "Bf-retry-bunker"
+		},
+		{
+			"offsets": [
+				37,
+				5
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathLoop",
+			"loop": true,
+			"name": "Bd-dead-bunker"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Bf-Bunker",
+	"position": [
+		-110,
+		190
+	],
+	"healthbar_colors2": [
+		49,
+		176,
+		209
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}

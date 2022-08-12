@@ -2,82 +2,93 @@
 	"animations": [
 		{
 			"offsets": [
-				217,
-				10
+				99,
+				201
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singLEFT",
+			"anim": "bad",
 			"loop": false,
-			"name": "left-rei"
+			"name": "wonder-bad"
 		},
 		{
 			"offsets": [
-				61,
-				-346
+				152,
+				1
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
 			"loop": false,
-			"name": "down-rei"
+			"name": "wonder-down"
 		},
 		{
 			"offsets": [
-				-42,
-				96
+				32,
+				3
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "wonder-left"
+		},
+		{
+			"offsets": [
+				-16,
+				93
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
 			"loop": false,
-			"name": "up-rei"
-		},
-		{
-			"offsets": [
-				-148,
-				-11
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"loop": false,
-			"name": "right-rei"
+			"name": "wonder-up"
 		},
 		{
 			"offsets": [
 				0,
-				0
+				1
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "idle",
 			"loop": false,
-			"name": "idle-rei"
+			"name": "wonder-idle"
+		},
+		{
+			"offsets": [
+				156,
+				339
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "wonder-right"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/SlavRei",
+	"image": "characters/Maskman",
 	"position": [
-		60,
-		-230
+		-70,
+		140
 	],
 	"healthbar_colors2": [
-		135,
-		80,
-		215
+		161,
+		161,
+		161
 	],
-	"healthicon": "slavrei",
+	"healthicon": "maskmanface",
 	"flip_x": false,
 	"healthbar_colors": [
-		249,
-		94,
-		255
+		161,
+		161,
+		161
 	],
 	"camera_position": [
-		180,
-		70
+		-190,
+		20
 	],
 	"sing_duration": 6.1,
-	"scale": 0.7
+	"scale": 1
 }

@@ -1,66 +1,66 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				72,
-				466
-			],
 			"loop": false,
+			"offsets": [
+				216,
+				-13
+			],
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Puk-left",
-			"indices": []
+			"indices": [],
+			"name": "Puk-left"
 		},
 		{
-			"offsets": [
-				-100,
-				358
-			],
 			"loop": false,
+			"offsets": [
+				12,
+				-119
+			],
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "Puk-down",
-			"indices": []
+			"indices": [],
+			"name": "Puk-down"
 		},
 		{
-			"offsets": [
-				-100,
-				692
-			],
 			"loop": false,
+			"offsets": [
+				20,
+				221
+			],
+			"fps": 24,
 			"anim": "singUP",
-			"fps": 24,
-			"name": "Puk-up",
-			"indices": []
+			"indices": [],
+			"name": "Puk-up"
 		},
 		{
-			"offsets": [
-				-157,
-				541
-			],
 			"loop": false,
+			"offsets": [
+				-59,
+				66
+			],
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "Puk-right",
-			"indices": []
+			"indices": [],
+			"name": "Puk-right"
 		},
 		{
-			"offsets": [
-				-98,
-				467
-			],
 			"loop": false,
-			"anim": "idle",
+			"offsets": [
+				0,
+				0
+			],
 			"fps": 24,
-			"name": "Puk-idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Puk-idle"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Puk",
 	"position": [
-		0,
-		320
+		-180,
+		40
 	],
 	"healthbar_colors2": [
 		175,
@@ -75,8 +75,8 @@
 		66
 	],
 	"camera_position": [
-		120,
-		-160
+		200,
+		130
 	],
 	"sing_duration": 6.1,
 	"scale": 0.5

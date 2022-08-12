@@ -1,114 +1,114 @@
 {
 	"animations": [
 		{
-			"offsets": [
-				-150,
-				186
-			],
 			"loop": false,
+			"offsets": [
+				79,
+				-10
+			],
+			"fps": 24,
 			"anim": "singLEFT",
+			"indices": [],
+			"name": "W-left"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				51,
+				-223
+			],
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "W-down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				22,
+				49
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "W-up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-17,
+				2
+			],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "W-right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "W-idle"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singLEFT-loop",
 			"fps": 24,
 			"name": "W-left",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-185,
-				29
-			],
-			"loop": false,
-			"anim": "singDOWN",
-			"fps": 24,
-			"name": "W-down",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-189,
-				239
-			],
-			"loop": false,
-			"anim": "singUP",
-			"fps": 24,
-			"name": "W-up",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-213,
-				193
-			],
-			"loop": false,
-			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "W-right",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-208,
-				185
-			],
-			"loop": false,
-			"anim": "idle",
-			"fps": 24,
-			"name": "W-idle",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-150,
-				195
-			],
-			"loop": true,
-			"fps": 24,
-			"anim": "singLEFT-loop",
 			"indices": [
 				12,
 				13,
 				14,
 				15
-			],
-			"name": "W-left"
+			]
 		},
 		{
-			"offsets": [
-				-210,
-				199
-			],
 			"loop": true,
-			"fps": 24,
+			"offsets": [
+				-20,
+				3
+			],
 			"anim": "singRIGHT-loop",
+			"fps": 24,
+			"name": "W-right",
 			"indices": [
 				15,
 				16,
 				17,
 				18
-			],
-			"name": "W-right"
+			]
 		},
 		{
-			"offsets": [
-				-213,
-				199
-			],
 			"loop": true,
-			"fps": 24,
+			"offsets": [
+				0,
+				0
+			],
 			"anim": "singUP-loop",
+			"fps": 24,
+			"name": "W-up",
 			"indices": [
 				56,
 				57,
 				58,
 				59
-			],
-			"name": "W-up"
+			]
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Wondernope",
 	"position": [
 		0,
-		320
+		-250
 	],
 	"healthbar_colors2": [
 		175,
@@ -127,5 +127,5 @@
 		-160
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.6
 }

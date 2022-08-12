@@ -1,107 +1,107 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				79,
 				-10
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "W-left"
+			"fps": 24,
+			"name": "W-left",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				51,
 				-223
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "W-down"
+			"fps": 24,
+			"name": "W-down",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				22,
 				49
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singUP",
-			"indices": [],
-			"name": "W-up"
+			"fps": 24,
+			"name": "W-up",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-17,
 				2
 			],
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "W-right"
-		},
-		{
 			"loop": false,
-			"offsets": [
-				0,
-				0
-			],
+			"anim": "singRIGHT",
 			"fps": 24,
-			"anim": "idle",
-			"indices": [],
-			"name": "W-idle"
+			"name": "W-right",
+			"indices": []
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "singLEFT-loop",
+			"loop": false,
+			"anim": "idle",
 			"fps": 24,
-			"name": "W-left",
+			"name": "W-idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "singLEFT-loop",
 			"indices": [
 				12,
 				13,
 				14,
 				15
-			]
+			],
+			"name": "W-left"
 		},
 		{
-			"loop": true,
 			"offsets": [
 				-20,
 				3
 			],
-			"anim": "singRIGHT-loop",
+			"loop": true,
 			"fps": 24,
-			"name": "W-right",
+			"anim": "singRIGHT-loop",
 			"indices": [
 				15,
 				16,
 				17,
 				18
-			]
+			],
+			"name": "W-right"
 		},
 		{
-			"loop": true,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "singUP-loop",
+			"loop": true,
 			"fps": 24,
-			"name": "W-up",
+			"anim": "singUP-loop",
 			"indices": [
 				56,
 				57,
 				58,
 				59
-			]
+			],
+			"name": "W-up"
 		}
 	],
 	"no_antialiasing": false,
@@ -123,8 +123,8 @@
 		66
 	],
 	"camera_position": [
-		120,
-		-160
+		150,
+		190
 	],
 	"sing_duration": 6.1,
 	"scale": 0.6

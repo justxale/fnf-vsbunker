@@ -1,66 +1,66 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				216,
 				-13
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Puk-left"
+			"fps": 24,
+			"name": "Puk-left",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				12,
 				-119
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Puk-down"
+			"fps": 24,
+			"name": "Puk-down",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				20,
 				221
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Puk-up"
+			"fps": 24,
+			"name": "Puk-up",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-59,
 				66
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Puk-right"
+			"fps": 24,
+			"name": "Puk-right",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"fps": 24,
+			"loop": false,
 			"anim": "idle",
-			"indices": [],
-			"name": "Puk-idle"
+			"fps": 24,
+			"name": "Puk-idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Puk",
 	"position": [
-		-180,
-		40
+		-240,
+		80
 	],
 	"healthbar_colors2": [
 		175,

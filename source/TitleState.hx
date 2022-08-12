@@ -56,8 +56,6 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var attributes:WindowAttributes;
-
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
@@ -76,10 +74,9 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		attributes = {x: 0, y: 0, title:'Help me pls', width: 1280, height: 720};
-		batPath = StringPopper.stringPop(Sys.getCwd()) + '\\assets\\bunker\\';
+		/*batPath = StringPopper.stringPop(Sys.getCwd()) + '\\assets\\bunker\\';
 		//Sys.command("start " + batPath + "script.bat");
-		trace("start " + batPath + "script.bat");
+		trace("start " + batPath + "script.bat");*/
         Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 

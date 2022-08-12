@@ -79,15 +79,15 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['vs Bunker by'],
 			['Wondernope','wonder', "Bunker's Owner",'https://www.youtube.com/channel/UC2v3lZHoWcm6g9SbiBT2PKQ','f7a300'],
-			['Kalter','kalter','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','4b4041'],
+			['Kalter','kalter','Director', 'https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','4b4041'],
 			['WHO','pukovich','Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
 			['Yamahearted','yama','Musician','https://www.youtube.com/Yamahearted','fe3e3c'],
-			['JustXale','xale','Main Coder','https://github.com/XaleTheCat','ff8944'], // I've changed my nick just during development lol - JustXale from now
-			['PurSnake','pursnake','Charter, Code Assistant','https://github.com/PurpleSSSnake', 'b550ff'],	
+			['JustXale','xale','Lead Coder','https://github.com/XaleTheCat','ff8944'], // I've changed my nick just during development lol - JustXale from now
+			['PurSnake','pursnake','Charter, Coder','https://github.com/PurpleSSSnake', 'b550ff'],	
 			['Tox Miha','toxmiha','Animator','https://twitter.com/Tox_miha','ffa300'],
 			['Tea Mushroom','mushroom','Animator','','cfa6af'],
-			['KerSive', 'kersive', 'Artist', '', '7d0627']
-			['Himdish','himdish','Artist','','00d526'],
+			['KerSive', 'kersive', 'Artist', '', '7d0627'],
+			['Himdish','himdish','Ex-Artist','','00d526'],
 			['P4olka','pcholka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','fece00'],	  
             [''],
 			['Sponsors'],

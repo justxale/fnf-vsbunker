@@ -356,6 +356,9 @@ class PlayState extends MusicBeatState
 
 	var maxHealthProb:Float;
 
+	// bunker var
+	var defaultCamZoomCache:Float;
+
 	override public function create()
 	{
 		instance = this;
@@ -549,6 +552,7 @@ class PlayState extends MusicBeatState
 		}
 
 		defaultCamZoom = stageData.defaultZoom;
+		defaultCamZoomCache = stageData.defaultZoom;
 		isPixelStage = stageData.isPixelStage;
         NotesCanMoveCam = stageData.cameramovefromnotes;
 		BF_X = stageData.boyfriend[0];
@@ -4821,6 +4825,35 @@ var tankX:Float = 400;
 	override function beatHit()
 	{
 		super.beatHit();
+
+		//trace(Paths.formatToSongPath(SONG.song));
+
+		/*if(curBeat == 48 && Paths.formatToSongPath(SONG.song) == 'cold-reception')
+		{
+			FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom * 1.3}, 2, {ease: FlxEase.quadInOut});
+			defaultCamZoom = defaultCamZoom * 1.3;
+		}*/
+
+		if(Paths.formatToSongPath(SONG.song) == 'cold-reception')
+		{
+			switch(curBeat)
+			{
+				case 48:
+					{
+						FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom * 1.5}, 2, {ease: FlxEase.quadInOut});
+						defaultCamZoom = defaultCamZoom * 1.5;
+						FlxG.camera.fade(FlxColor.BLACK, 4, false, null, true);
+					}	
+				
+				case 64:
+					{
+						FlxG.camera.fade(FlxColor.BLACK, 0.000001, true, null, true);
+						defaultCamZoom = defaultCamZoomCache;
+						FlxG.camera.flash(FlxColor.WHITE, 0.5, null, true);
+					}
+			}
+		}
+		
 
 
 		wiggleShit.waveAmplitude = 0.035;

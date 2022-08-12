@@ -1,6 +1,5 @@
 package;
 
-import lime.ui.WindowAttributes;
 #if desktop
 import Discord.DiscordClient;
 #end
@@ -23,8 +22,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
-
-import Sys;
 
 using StringTools;
 
@@ -470,7 +467,7 @@ class TitleState extends MusicBeatState
 				case 2:
 					createCoolText(['Graphex Engine by'], 45);
 				case 4:
-					addMoreText('AlterXale', 45);
+					addMoreText('JustXale', 45);
 					addMoreText('PurSnake', 45);					
 				case 6:
                     deleteCoolText();

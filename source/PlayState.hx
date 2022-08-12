@@ -519,7 +519,7 @@ class PlayState extends MusicBeatState
 		{
 			switch (songName)
 			{
-				case 'cold reception' | 'thisis-not-a-game' | 'new friend':
+				case 'cold reception' | 'this is not a game' | 'new friend':
 					curStage = 'alter';
 				default:
 					curStage = 'bar';

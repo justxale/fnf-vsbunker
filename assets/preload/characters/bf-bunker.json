@@ -1,0 +1,138 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Bf-idle-bunker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-7
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Bf-left-bunker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				21
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "Bf-left-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-18,
+				-58
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Bf-down-bunker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-46,
+				33
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Bf-up-bunker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-49,
+				-5
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Bf-right-bunker",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-21,
+				-21
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "Bf-down-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-45,
+				29
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "Bf-up-miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-45,
+				22
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "Bf-right-miss",
+			"indices": []
+		},
+		{
+			"offsets": [
+				1,
+				4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "hey",
+			"loop": false,
+			"name": "Bd-hey-bunker"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Bf-Bunker",
+	"position": [
+		-110,
+		190
+	],
+	"healthbar_colors2": [
+		49,
+		176,
+		209
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}

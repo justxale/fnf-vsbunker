@@ -1,0 +1,83 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				217,
+				10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "left-rei"
+		},
+		{
+			"offsets": [
+				61,
+				-346
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "down-rei"
+		},
+		{
+			"offsets": [
+				-42,
+				96
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "up-rei"
+		},
+		{
+			"offsets": [
+				-148,
+				-11
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "right-rei"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "idle-rei"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/SlavRei",
+	"position": [
+		60,
+		-230
+	],
+	"healthbar_colors2": [
+		135,
+		80,
+		215
+	],
+	"healthicon": "slavrei",
+	"flip_x": false,
+	"healthbar_colors": [
+		249,
+		94,
+		255
+	],
+	"camera_position": [
+		180,
+		70
+	],
+	"sing_duration": 6.1,
+	"scale": 0.7
+}

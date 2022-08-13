@@ -1,0 +1,61 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				5
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "PressRetry",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "BfDead",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-48,
+				-21
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "RetryIdle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/soulBF",
+	"position": [
+		-430,
+		250
+	],
+	"healthbar_colors2": [
+		49,
+		176,
+		209
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		-950,
+		340
+	],
+	"sing_duration": 4,
+	"scale": 0.1
+}

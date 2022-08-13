@@ -1,0 +1,127 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "t-idle 1"
+		},
+		{
+			"offsets": [
+				28,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "t-left 1"
+		},
+		{
+			"offsets": [
+				25,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "t-down 1"
+		},
+		{
+			"offsets": [
+				-3,
+				18
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "t-up 1"
+		},
+		{
+			"offsets": [
+				-3,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "t-right 1"
+		},
+		{
+			"offsets": [
+				2,
+				88
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "left-miss 1"
+		},
+		{
+			"offsets": [
+				-4,
+				57
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "down-miss 1"
+		},
+		{
+			"offsets": [
+				16,
+				97
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "up-miss 1"
+		},
+		{
+			"offsets": [
+				-4,
+				71
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "right-miss 1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Wonderchan",
+	"position": [
+		0,
+		0
+	],
+	"healthbar_colors2": [
+		120,
+		0,
+		249
+	],
+	"healthicon": "wonderchan",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		220,
+		9
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

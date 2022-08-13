@@ -4854,8 +4854,6 @@ var tankX:Float = 400;
 			}
 		}
 		
-
-
 		wiggleShit.waveAmplitude = 0.035;
 		wiggleShit.waveFrequency = 10;
 

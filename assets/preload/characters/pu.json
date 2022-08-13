@@ -2,47 +2,47 @@
 	"animations": [
 		{
 			"offsets": [
-				217,
-				10
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singLEFT",
-			"loop": false,
-			"name": "left-rei"
-		},
-		{
-			"offsets": [
-				61,
-				-346
+				17,
+				-136
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
 			"loop": false,
-			"name": "down-rei"
+			"name": "pu-down"
 		},
 		{
 			"offsets": [
-				-42,
-				96
+				232,
+				-16
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "pu-left"
+		},
+		{
+			"offsets": [
+				18,
+				240
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
 			"loop": false,
-			"name": "up-rei"
+			"name": "pu-up"
 		},
 		{
 			"offsets": [
-				-148,
-				-11
+				-70,
+				73
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
 			"loop": false,
-			"name": "right-rei"
+			"name": "pu-right"
 		},
 		{
 			"offsets": [
@@ -53,31 +53,31 @@
 			"fps": 24,
 			"anim": "idle",
 			"loop": false,
-			"name": "idle-rei"
+			"name": "pu-idle"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/SlavRei",
+	"image": "characters/Pu",
 	"position": [
-		60,
-		-230
+		-40,
+		110
 	],
 	"healthbar_colors2": [
-		135,
-		80,
-		215
+		175,
+		102,
+		206
 	],
-	"healthicon": "slavrei",
+	"healthicon": "mashup",
 	"flip_x": false,
 	"healthbar_colors": [
-		249,
-		94,
-		255
+		95,
+		255,
+		66
 	],
 	"camera_position": [
-		180,
-		70
+		60,
+		120
 	],
 	"sing_duration": 6.1,
-	"scale": 0.7
+	"scale": 0.5
 }

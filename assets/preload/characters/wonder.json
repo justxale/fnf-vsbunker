@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				-150,
-				186
+				79,
+				-10
 			],
 			"loop": false,
 			"anim": "singLEFT",
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				-185,
-				29
+				51,
+				-223
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-189,
-				239
+				22,
+				49
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-213,
-				193
+				-17,
+				2
 			],
 			"loop": false,
 			"anim": "singRIGHT",
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				-208,
-				185
+				0,
+				0
 			],
 			"loop": false,
 			"anim": "idle",
@@ -57,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				-150,
-				195
+				0,
+				0
 			],
 			"loop": true,
 			"fps": 24,
@@ -73,8 +73,8 @@
 		},
 		{
 			"offsets": [
-				-210,
-				199
+				-20,
+				3
 			],
 			"loop": true,
 			"fps": 24,
@@ -89,8 +89,8 @@
 		},
 		{
 			"offsets": [
-				-213,
-				199
+				0,
+				0
 			],
 			"loop": true,
 			"fps": 24,
@@ -108,7 +108,7 @@
 	"image": "characters/Wondernope",
 	"position": [
 		0,
-		320
+		-250
 	],
 	"healthbar_colors2": [
 		175,
@@ -123,9 +123,9 @@
 		66
 	],
 	"camera_position": [
-		120,
-		-160
+		150,
+		190
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.6
 }

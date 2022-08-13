@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				72,
-				466
+				216,
+				-13
 			],
 			"loop": false,
 			"anim": "singLEFT",
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				-100,
-				358
+				12,
+				-119
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-100,
-				692
+				20,
+				221
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-157,
-				541
+				-59,
+				66
 			],
 			"loop": false,
 			"anim": "singRIGHT",
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				-98,
-				467
+				0,
+				0
 			],
 			"loop": false,
 			"anim": "idle",
@@ -59,8 +59,8 @@
 	"no_antialiasing": false,
 	"image": "characters/Puk",
 	"position": [
-		0,
-		320
+		-240,
+		80
 	],
 	"healthbar_colors2": [
 		175,
@@ -75,8 +75,8 @@
 		66
 	],
 	"camera_position": [
-		120,
-		-160
+		200,
+		130
 	],
 	"sing_duration": 6.1,
 	"scale": 0.5

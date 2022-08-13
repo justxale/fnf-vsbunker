@@ -1,0 +1,22 @@
+{
+	"songs": [
+		["(56709)", "slavrei", [34, 51, 68]],
+		["Let the Fun Begin", "kalter", [34, 51, 68]],
+		["The Key Goals of our Guests", "wonder", [34, 51, 68]]
+	],
+
+	"weekCharacters": [
+		"spooky",
+		"bf",
+		""
+	],
+	"weekBackground": "halloween",
+
+	"storyName": "Bunker dudes",
+	"weekBefore": "week1",
+	"weekName": "Week 2",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

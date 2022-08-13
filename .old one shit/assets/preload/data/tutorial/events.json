@@ -1,0 +1,49 @@
+{
+	"song": {
+		"speed": 1,
+		"stage": null,
+		"player1": "bf",
+		"player2": "gf",
+		"player3": null,
+		"events": [
+			[
+				18650,
+				[
+					[
+						"Hey!",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				28250,
+				[
+					[
+						"Hey!",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"Change Scroll Speed",
+						"2.6",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 100,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Tutorial"
+	}
+}

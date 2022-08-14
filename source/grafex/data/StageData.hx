@@ -1,7 +1,6 @@
 package grafex.data;
 
 import grafex.systems.Paths;
-import grafex.states.PlayState;
 
 import sys.io.File;
 import sys.FileSystem;
@@ -9,7 +8,6 @@ import sys.FileSystem;
 import openfl.utils.Assets;
 
 import haxe.Json;
-import haxe.format.JsonParser;
 import grafex.systems.song.Song;
 
 using StringTools;
@@ -46,6 +44,8 @@ class StageData {
 					stage = 'bar';
 				case 'wondertasm':
 					stage = 'tasm';
+				case 'a-wonderful-encounter':
+					stage = 'mask';
 				case 'tutorial':
 					stage = 'stage';
 				default:

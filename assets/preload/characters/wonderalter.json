@@ -67,7 +67,7 @@
 		161,
 		161
 	],
-	"healthicon": "face",
+	"healthicon": "faker",
 	"flip_x": false,
 	"healthbar_colors": [
 		161,
@@ -75,8 +75,8 @@
 		161
 	],
 	"camera_position": [
-		0,
-		0
+		170,
+		70
 	],
 	"sing_duration": 6.1,
 	"scale": 0.8

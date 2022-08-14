@@ -1,76 +1,76 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				99,
-				201
+				69,
+				202
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "bad",
-			"loop": false,
-			"name": "wonder-bad"
-		},
-		{
-			"offsets": [
-				152,
-				1
-			],
-			"indices": [],
 			"fps": 24,
-			"anim": "singDOWN",
-			"loop": false,
-			"name": "wonder-down"
+			"name": "wonder-bad",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				32,
+				137,
+				2
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "wonder-down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				163,
 				3
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "wonder-left"
-		},
-		{
-			"offsets": [
-				-16,
-				93
-			],
-			"indices": [],
 			"fps": 24,
-			"anim": "singUP",
-			"loop": false,
-			"name": "wonder-up"
+			"name": "wonder-left",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				88,
+				95
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "wonder-up",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				0,
 				1
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "wonder-idle"
+			"fps": 24,
+			"name": "wonder-idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				156,
-				339
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singRIGHT",
 			"loop": false,
-			"name": "wonder-right"
+			"offsets": [
+				-25,
+				340
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "wonder-right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Maskman",
 	"position": [
-		-70,
+		-140,
 		140
 	],
 	"healthbar_colors2": [

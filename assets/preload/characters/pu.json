@@ -1,70 +1,70 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				17,
 				-136
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "pu-down"
+			"fps": 24,
+			"name": "pu-down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				232,
 				-16
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "pu-left"
+			"fps": 24,
+			"name": "pu-left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				18,
 				240
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "pu-up"
+			"fps": 24,
+			"name": "pu-up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-70,
 				73
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "pu-right"
+			"fps": 24,
+			"name": "pu-right",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "pu-idle"
+			"fps": 24,
+			"name": "pu-idle",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Pu",
 	"position": [
 		-40,
-		110
+		160
 	],
 	"healthbar_colors2": [
 		175,
-		102,
+		82,
 		206
 	],
 	"healthicon": "mashup",

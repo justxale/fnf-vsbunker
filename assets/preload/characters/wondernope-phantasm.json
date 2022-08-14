@@ -101,22 +101,22 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/WonderNope-Phantasm",
+	"image": "characters/Wondernope-Phantasm",
 	"position": [
 		0,
 		0
 	],
 	"healthbar_colors2": [
-		161,
-		161,
-		161
+		120,
+		0,
+		249
 	],
-	"healthicon": "face",
+	"healthicon": "wondernope",
 	"flip_x": true,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		0,
+		220,
+		9
 	],
 	"camera_position": [
 		0,

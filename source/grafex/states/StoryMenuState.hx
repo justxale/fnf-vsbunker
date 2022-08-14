@@ -155,6 +155,7 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.frames = ui_tex;
 		leftArrow.animation.addByPrefix('idle', "arrow left");
 		leftArrow.animation.addByPrefix('press', "arrow push left");
+		leftArrow.visible = false;
 		leftArrow.animation.play('idle');
 		leftArrow.antialiasing = ClientPrefs.globalAntialiasing;
 		difficultySelectors.add(leftArrow);
@@ -174,6 +175,7 @@ class StoryMenuState extends MusicBeatState
 
 		rightArrow = new FlxSprite(leftArrow.x + 376, leftArrow.y);
 		rightArrow.frames = ui_tex;
+		rightArrow.visible = false;
 		rightArrow.animation.addByPrefix('idle', 'arrow right');
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
 		rightArrow.animation.play('idle');
@@ -211,10 +213,10 @@ class StoryMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if(FlxG.keys.justPressed.F11)
-                {
-                FlxG.fullscreen = !FlxG.fullscreen;
-                }
-                // scoreText.setFormat('VCR OSD Mono', 32);
+        {
+        	FlxG.fullscreen = !FlxG.fullscreen;
+        }
+        // scoreText.setFormat('VCR OSD Mono', 32);
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, Utils.boundTo(elapsed * 30, 0, 1)));
 		if(Math.abs(intendedScore - lerpScore) < 10) lerpScore = intendedScore;
 
@@ -248,12 +250,12 @@ class StoryMenuState extends MusicBeatState
 			else
 				leftArrow.animation.play('idle');
 
-			if (controls.UI_RIGHT_P)
+			/*if (controls.UI_RIGHT_P)
 				changeDifficulty(1);
 			else if (controls.UI_LEFT_P)
 				changeDifficulty(-1);
 			else if (upP || downP)
-				changeDifficulty();
+				changeDifficulty();*/
 
 			if(FlxG.mouse.wheel != 0)
 				{

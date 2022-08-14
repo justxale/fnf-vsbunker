@@ -44,23 +44,16 @@ import grafex.cutscenes.Cutscene.CutsceneFile;
 import grafex.cutscenes.DialogueBox;
 import grafex.cutscenes.CutsceneHandler;
 
-import grafex.states.MainMenuState;
 import grafex.states.editors.ChartingState;
 import grafex.states.editors.CharacterEditorState;
 import grafex.states.substates.GameOverSubstate;
 
 import lime.app.Application;
-import openfl.filters.BitmapFilter;
-import flixel.FlxBasic;
 import flixel.FlxCamera;
 import flixel.FlxG;
-import flixel.FlxGame;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
-import flixel.effects.particles.FlxEmitter;
-import flixel.effects.particles.FlxParticle;
-import flixel.FlxState;
 import flixel.FlxSubState;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.effects.FlxTrail;
@@ -383,6 +376,12 @@ class PlayState extends MusicBeatState
 
 	var maxHealthProb:Float;
 
+	// Bunker vars
+	var defaultCamZoomCache:Float;
+	var wonderchanMode:Bool = false;
+	var vintageWC:BGSprite;
+	var anotherBG:BGSprite;
+
 	override public function create()
 	{
 		instance = this;
@@ -563,6 +562,8 @@ class PlayState extends MusicBeatState
 					curStage = 'bar';
 				case 'wondertasm':
 					curStage = 'tasm';
+				case 'a-wonderful-encounter':
+					curStage = 'mask';
 				case 'tutorial':
 					curStage = 'stage';
 				default:
@@ -592,6 +593,7 @@ class PlayState extends MusicBeatState
 		}
 
 		defaultCamZoom = stageData.defaultZoom;
+		defaultCamZoomCache = stageData.defaultZoom;
 		isPixelStage = stageData.isPixelStage;
         NotesCanMoveCam = stageData.dynamic_camera;
 		BF_X = stageData.boyfriend[0];
@@ -668,22 +670,30 @@ class PlayState extends MusicBeatState
 				add(stones);
 
 			case 'bar': //Week 2
-				var bg:BGSprite = new BGSprite('bar', -600, -200, 1, 1, null, null);
-				//bg.scale.set(3, 3);
+				var bg:BGSprite = new BGSprite('bar', -200, -200, 1, 1, null, null);
+				bg.scale.set(1.3, 1.3);
 				add(bg);
 
-			case 'tasm': //Week 3
-				var BG:BGSprite = new BGSprite('sonic', -120, -50, 0.1, 0.1);
+			case 'tasm': // Wondertasm
+				var BG:BGSprite = new BGSprite('sonic', 0, 300, 1, 1);
+				BG.scale.set(1.5, 1.5);
 				add(BG);
 
-				var anotherBG:BGSprite = new BGSprite('fleet', -120, -50, 0.1, 0.1);
+				anotherBG = new BGSprite('fleet', 0, 300, 1, 1);
 				anotherBG.visible = false;
+				anotherBG.scale.set(1.5, 1.5);
 				add(anotherBG);
 
-				var vintage:BGSprite = new BGSprite('vintage', -120, -50, 0.1, 0.1);
-				vintage.scale.set(1.2, 1.2);
-				vintage.animation.addByPrefix('vintage', 'idle', 24, false);
-				add(vintage);
+				vintageWC = new BGSprite('vintage', 250, 0, 0, 0, ['idle']);
+				vintageWC.scale.set(3, 3);
+				vintageWC.alpha = 0;
+				vintageWC.animation.addByPrefix('vintage', 'idle', 16, true);
+				vintageWC.cameras = [camHUD];
+				add(vintageWC);
+			
+			case 'mask':
+				var BG:BGSprite = new BGSprite('undertale', 0, 0, 1, 1);
+				add(BG);
 
 			/*case 'mall': //Week 5 - Cocoa, Eggnog
 				var bg:BGSprite = new BGSprite('christmas/bgWalls', -1000, -500, 0.2, 0.2);
@@ -919,12 +929,6 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));*/
 		}
 
-		switch(Paths.formatToSongPath(SONG.song))
-		{
-			case 'stress':
-				GameOverSubstate.characterName = 'bf-holding-gf-dead';
-		}
-
 		if(PlayState.isPixelStage) {
 			introSoundsSuffix = '-pixel';
 		}
@@ -937,6 +941,14 @@ class PlayState extends MusicBeatState
 
 		add(dadGroup);
 		add(boyfriendGroup);
+
+		switch(Paths.formatToSongPath(SONG.song))
+		{
+			case 'wondertasm':
+				GameOverSubstate.characterName = 'wondernope-phantasm-dead';
+				dadGroup.alpha = 0.3;
+				dadGroup.flipX = true;
+		}
 
 		switch(curStage)
 		{
@@ -1053,9 +1065,11 @@ class PlayState extends MusicBeatState
 				}
 		}
 
-		dad = new Character(0, 0, SONG.player2);
+		if(Paths.formatToSongPath(SONG.song) == 'wondertasm') dad = new Character(0, 0, SONG.player2, true);
+		else dad = new Character(0, 0, SONG.player2);
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
+		//if(Paths.formatToSongPath(SONG.song) == 'wondertasm') dad.flipX = true;
 		startCharacterLua(dad.curCharacter);
 		
 		boyfriend = new Boyfriend(0, 0, SONG.player1);
@@ -1161,14 +1175,6 @@ class PlayState extends MusicBeatState
 		wiggleShit.waveSpeed = 1.8; // fasto
 		wiggleShit.shader.uTime.value = [(strumLine.y - Note.swagWidth * 4) / FlxG.height]; // from 4mbr0s3 2
 		susWiggle = new ShaderFilter(wiggleShit.shader);
-		// le wiggle 2
-		var wiggleShit2:WiggleEffect = new WiggleEffect();
-		wiggleShit2.waveAmplitude = 0.10;
-		wiggleShit2.effectType = WiggleEffectType.HEAT_WAVE_VERTICAL;
-		wiggleShit2.waveFrequency = 0;
-		wiggleShit2.waveSpeed = 1.8; // fasto
-		wiggleShit2.shader.uTime.value = [(strumLine.y - Note.swagWidth * 4) / FlxG.height]; // from 4mbr0s3 2
-		var susWiggle2 = new ShaderFilter(wiggleShit2.shader);
         if(ClientPrefs.micedUpSus)
 			filterSUSnotes.push(susWiggle); // only enable it for snake notes
 
@@ -1328,12 +1334,14 @@ class PlayState extends MusicBeatState
 
 		iconP2 = new HealthIcon(dad.healthIcon, false);
 		iconP2.y = healthBar.y - (iconP2.height / 2);
-		iconP2.visible = !ClientPrefs.hideHud;
+		trace(Paths.formatToSongPath(SONG.song) == 'wondertasm');
+		if(Paths.formatToSongPath(SONG.song) == 'wondertasm') iconP2.visible = false;
+		else iconP2.visible = !ClientPrefs.hideHud;
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 
 		iconGroup = new FlxTypedGroup<HealthIcon>();
 		iconGroup.add(iconP1);
-		iconGroup.add(iconP2);
+		if(Paths.formatToSongPath(SONG.song) != 'wondertasm') iconGroup.add(iconP2);
 		add(iconGroup);
 
 
@@ -2949,6 +2957,14 @@ class PlayState extends MusicBeatState
 	{
         super.update(elapsed);
 
+		if(Paths.formatToSongPath(SONG.song) == 'wondertasm')
+		{
+			dadGroup.alpha -= 0.3 * elapsed;
+			if(dadGroup.alpha < 0.3) dadGroup.alpha = 0.3; 
+			vintageWC.alpha -= 0.7 * elapsed;
+			if(vintageWC.alpha < 0) vintageWC.alpha = 0;
+		}	
+
 
 		setOnLuas('curDecStep', curDecStep);
 		setOnLuas('curDecBeat', curDecBeat);
@@ -3114,7 +3130,14 @@ class PlayState extends MusicBeatState
 
 		if(!inCutscene) {
 			var lerpVal:Float = Utils.boundTo(elapsed * 2.4 * cameraSpeed, 0, 1);
-			camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
+			switch(curStage)
+			{
+				case 'bar':
+					camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal)/* + 100*/, FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal)/* - 100*/);
+
+				default:
+					camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
+			}
 			if(!startingSong && !endingSong && boyfriend.animation.curAnim != null && boyfriend.animation.curAnim.name.startsWith('idle')) {
 				boyfriendIdleTime += elapsed;
 				if(boyfriendIdleTime >= 0.15) { // Kind of a mercy thing for making the achievement easier to get as it's apparently frustrating to some playerss
@@ -4683,6 +4706,10 @@ class PlayState extends MusicBeatState
 			if(daNote.gfNote) {
 				char = gf;
 			}
+			else if (wonderchanMode)
+			{
+				char = dad;
+			}
 
 			if(ClientPrefs.playmissanims)
 			if(char != null && !daNote.noMissAnimation && char.hasMissAnimations)
@@ -4872,6 +4899,12 @@ class PlayState extends MusicBeatState
 					if(gf != null){
 						gf.playAnim(animToPlay + daAlt, true);
 						gf.holdTimer = 0; }
+					}
+					else if (wonderchanMode)
+					{
+						dadGroup.alpha = 1;
+						dad.playAnim(animToPlay + daAlt, true);
+						dad.holdTimer = 0;
 					}
 					else
 					{
@@ -5165,6 +5198,27 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 
+		switch(Paths.formatToSongPath(SONG.song))
+		{
+			case 'wondertasm':
+				switch(curStep)
+				{
+					case 384 | 768 | 1151 | 1172 | 1276 | 1282 | 1304 | 1536 | 1922 | 1937 | 1943 | 1956:
+						wonderchanMode = true;
+						vintageWC.alpha = 0.8;
+						vintageWC.animation.play('vintage');
+						FlxG.sound.play(Paths.sound('stat'), 0.3);
+						anotherBG.visible = true;
+					
+					case 640 | 1024 | 1154 | 1176 | 1279 | 1300 | 1408 | 1792 | 1926 | 1940 | 1946 | 1960:
+						wonderchanMode = false;
+						vintageWC.alpha = 0.8;
+						vintageWC.animation.play('vintage');
+						FlxG.sound.play(Paths.sound('stat'), 0.3);
+						anotherBG.visible = false;
+				}
+		}
+
 		getCamOffsets();
 
 		if(curStep == lastStepHit) {
@@ -5183,6 +5237,29 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+
+		switch(Paths.formatToSongPath(SONG.song))
+		{
+			case 'cold-reception':
+			{
+				switch(curBeat)
+				{
+					case 48:
+						{
+							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom * 1.5}, 2, {ease: FlxEase.quadInOut});
+							defaultCamZoom = defaultCamZoom * 1.5;
+							FlxG.camera.fade(FlxColor.BLACK, 4, false, null, true);
+						}	
+					
+					case 64:
+						{
+							FlxG.camera.fade(FlxColor.BLACK, 0.000001, true, null, true);
+							defaultCamZoom = defaultCamZoomCache;
+							FlxG.camera.flash(FlxColor.WHITE, 0.5, null, true);
+						}
+				}		
+			}
+		}
 
 		wiggleShit.waveAmplitude = 0.035;
 		wiggleShit.waveFrequency = 10;
@@ -5281,6 +5358,8 @@ class PlayState extends MusicBeatState
 		{
 			dad.dance();
 		}
+		if(curBeat % dad.danceEveryNumBeats == 0 && Paths.formatToSongPath(SONG.song) == 'wondertasm')
+			dad.dance();	
 
 		switch (curStage)
 		{

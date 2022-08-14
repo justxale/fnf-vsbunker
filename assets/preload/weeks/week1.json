@@ -6,11 +6,11 @@
 	],
 
 	"weekCharacters": [
-		"dad",
+		"",
 		"bf",
 		""
 	],
-	"weekBackground": "stage",
+	"weekBackground": "",
 
 	"storyName": "Alternope",
 	"weekBefore": "tutorial",

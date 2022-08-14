@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "bf",
+		"player1": "bf-bunker",
 		"gfVersion": "gf",
 		"notes": [
 			{
@@ -4096,7 +4096,7 @@
 		"events": [],
 		"player2": "kalter",
 		"player3": null,
-		"song": "Kalter",
+		"song": "Let the Fun Begin",
 		"needsVoices": true,
 		"stage": "bar",
 		"validScore": true,

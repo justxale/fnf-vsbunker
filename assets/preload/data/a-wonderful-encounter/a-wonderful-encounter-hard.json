@@ -1,6 +1,6 @@
 {
 	"song": {
-		"player1": "bfheart",
+		"player1": "bf-soul",
 		"gfVersion": "gf",
 		"notes": [
 			{
@@ -10192,7 +10192,7 @@
 			}
 		],
 		"events": [],
-		"player2": "wondermask",
+		"player2": "maskman",
 		"player3": null,
 		"song": "A Wonderful Encounter",
 		"needsVoices": true,

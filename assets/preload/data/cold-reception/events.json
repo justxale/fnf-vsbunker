@@ -1,0 +1,29 @@
+{
+	"song": {
+		"speed": 2.2,
+		"stage": "alter",
+		"player1": "bf",
+		"player2": "wonderalter",
+		"events": [
+			[
+				34909.0909090909,
+				[
+					[
+						"Change Character",
+						"dad",
+						"alternope",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 110,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Cold Reception"
+	}
+}

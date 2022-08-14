@@ -6853,7 +6853,7 @@
 		"validScore": true,
 		"sections": 0,
 		"needsVoices": true,
-		"stage": "fleet",
+		"stage": "tasm",
 		"speed": 2.8,
 		"bpm": 160
 	}

@@ -5,10 +5,10 @@
 				0,
 				0
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "idle",
-			"loop": false,
+			"indices": [],
 			"name": "kalter-idle"
 		},
 		{
@@ -16,10 +16,10 @@
 				76,
 				-4
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
+			"indices": [],
 			"name": "kalter-left"
 		},
 		{
@@ -27,10 +27,10 @@
 				-3,
 				-132
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
+			"indices": [],
 			"name": "kalter-down"
 		},
 		{
@@ -38,10 +38,10 @@
 				8,
 				120
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
+			"indices": [],
 			"name": "kalter-up"
 		},
 		{
@@ -49,10 +49,10 @@
 				-14,
 				14
 			],
-			"indices": [],
+			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
+			"indices": [],
 			"name": "Kalter-rightt"
 		}
 	],
@@ -60,14 +60,14 @@
 	"image": "characters/Kalter",
 	"position": [
 		0,
-		0
+		-60
 	],
 	"healthbar_colors2": [
 		161,
 		161,
 		161
 	],
-	"healthicon": "kalter",
+	"healthicon": "face",
 	"flip_x": false,
 	"healthbar_colors": [
 		161,

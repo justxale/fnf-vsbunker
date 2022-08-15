@@ -26,16 +26,6 @@
 				]
 			],
 			[
-				17500,
-				[
-					[
-						"Change Scroll Speed",
-						"2.8",
-						"0.5"
-					]
-				]
-			],
-			[
 				17562.5,
 				[
 					[
@@ -1052,26 +1042,6 @@
 						"Set Property",
 						"defaultCamZoom",
 						"0.4"
-					]
-				]
-			],
-			[
-				190100,
-				[
-					[
-						"Change Scroll Speed",
-						"2.4",
-						"0.1"
-					]
-				]
-			],
-			[
-				208000,
-				[
-					[
-						"Change Scroll Speed",
-						"1.6",
-						"0.6"
 					]
 				]
 			]

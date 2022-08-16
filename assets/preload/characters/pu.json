@@ -63,16 +63,16 @@
 		160
 	],
 	"healthbar_colors2": [
-		175,
-		82,
-		206
+		254,
+		72,
+		71
 	],
 	"healthicon": "mashup",
 	"flip_x": false,
 	"healthbar_colors": [
-		95,
-		255,
-		66
+		254,
+		72,
+		71
 	],
 	"camera_position": [
 		260,

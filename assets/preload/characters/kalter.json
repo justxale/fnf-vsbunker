@@ -63,16 +63,16 @@
 		-60
 	],
 	"healthbar_colors2": [
-		161,
-		161,
-		161
+		37,
+		36,
+		37
 	],
-	"healthicon": "face",
+	"healthicon": "kalter",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		37,
+		36,
+		37
 	],
 	"camera_position": [
 		210,

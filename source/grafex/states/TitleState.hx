@@ -135,7 +135,7 @@ class TitleState extends MusicBeatState
 		FlxG.save.bind('grafex', 'xale');
 		ClientPrefs.loadPrefs();
 
-                Translation.checkLanguage();
+        Translation.checkLanguage();
 
 		Highscore.load();
 
@@ -243,8 +243,8 @@ class TitleState extends MusicBeatState
 		}
  
 		add(logoBl);
-        logoBltrail.shader = swagShader.shader;
-		logoBl.shader = swagShader.shader;
+       /* logoBltrail.shader = swagShader.shader;ss
+		logoBl.shader = swagShader.shader;*/
        
         FlxTween.tween(logoBl, {y: logoBl.y + 80}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG}); //Bruh -snake
 

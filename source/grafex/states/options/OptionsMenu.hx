@@ -138,72 +138,73 @@ class OptionsMenu extends FlxSubState
 				startSong = true;
 
 
-		options = [
-			new OptionCata(50, 40, "Gameplay", [
-				//new OffsetThing("Change the note visual offset (how many milliseconds a note looks like it is offset in a chart)"),
-				new HitSoundOption("Adds 'hitsound' on note hits."),
-				new GhostTapOption("Toggle counting pressing a directional input when no arrow is there as a miss."),
-				new DownscrollOption("Toggle making the notes scroll down rather than up."),
-				new NoReset("Toggle pressing R to gameover."),
-				new InstantRespawn("Toggle if you instantly respawn after dying."),
-				new CamZoomOption("Toggle the camera zoom in-game."),
-                new DFJKOption(),
-                new NotesOption(),
-                new Customizeption(),
-				new Judgement("Create a custom judgement preset"),
-				new Shouldcameramove("Moves camera on opponent/player note hits."),
-			]),
-			new OptionCata(345, 40, "Appearance", [
-                new NoteskinOption("Change your current noteskin"),
-				new AccTypeOption("Change your current accuracy type you want!"),
-                new IconBop("Change icon bopping type"),
-				new SongNameOption("Shows to you name of song your playing on HUD"),
-				new MiddleScrollOption("Put your lane in the center or on the right."), 
-				new HideOppStrumsOption("Shows/Hides opponent strums on screen.(RESTART SONG)"),
-				new MissSoundsOption("Toggle miss sounds playing when you don't hit a note."),
-				new MissAnimsOption("Toggle miss animations playing when you don't hit a note."),
-                new ShowSplashes("Show particles on SICK hit."),
-                new MicedUpSusOption("Enables filter like in MicedUp Engine."),
-               // new SustainsAlpha("Change Sustain Notes Alpha."),
-				new HealthBarOption("Toggles health bar visibility"),
-				new JudgementCounter("Show your judgements that you've gotten in the song"),
-				new LaneUnderlayOption("How transparent your lane is, higher = more visible."),
-                new HideHud("Shows to you hud."),
-                new ShowCombo("Combo sprite appearance."),
-                new ScoreZoom("Zoom score on 2'nd beat."),
-                new HealthBarAlpha("Healthbar Transparceny."),
-                new BlurNotes("(CONTAINS FPS ISSUES)/Make notes a bit 'blurred'."),
-			    new TimeBarType("Change the song's current position bar."),
-			]),
-			new OptionCata(640, 40, "Misc", [
-				new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
-				new ColorBlindOption("You can set colorblind filter (makes the game more playable for colorblind people)."),
-				new FPSOption("Toggle the FPS Counter."),
-                new MEMOption("Toggle the MEM Counter."),
-				#if desktop new FPSCapOption("Change your FPS Cap."),
-				#end
-                new AutoPause("Stops game, when its unfocused"),
-				new VintageOption("Adds 'vintage' on game screen."),
-                new AntialiasingOption("Toggle antialiasing, improving graphics quality at a slight performance penalty."),
-                new QualityLow("Turn off some object on stages"),
-				new Imagepersist("Images loaded will stay in memory until the game is closed."),
-				new GreenScreenMode("Makes screen green."),
-        		]),
-			new OptionCata(935, 40, "Extra", [
-				//new ResetSettings("Reset some your settings. This is irreversible!")
-				new AutoSave("Turn AutoSaves your chating in Charting state."),
-				new AutoSaveInt("Change Chart AutoSave Interval."),
-                new SkipTitleOption("Skips TitleState."),
-			    new PauseCountDownOption("Toggle countdown after pressing 'Resume' in Pause Menu."),
-			]),
-			new OptionCata(-1, 125, "Editing Keybinds", [/* nothing here lol - PurSnake*/], true),
-
-			new OptionCata(-1, 125, "Editing Judgements", [
-				new SickMSOption("How many milliseconds are in the SICK hit window"),
-				new GoodMsOption("How many milliseconds are in the GOOD hit window"),
-				new BadMsOption("How many milliseconds are in the BAD hit window"),
-			], true)
-		];
+			options = [
+				new OptionCata(50, 40, 'Gameplay', [	
+					//new OffsetThing('Change the note visual offset (how many milliseconds a note looks like it is offset in a chart)'),
+					new HitSoundOption("Adds 'sound' on note hits."),
+					new GhostTapOption('Toggle counting pressing a directional input when no arrow is there as a miss.'),
+					new DownscrollOption('Toggle making the notes scroll down rather than up.'),
+					new ResetButtonOption('Toggle pressing R to gameover.'),
+					new InstantRespawn('Toggle if you instantly respawn after dying.'),
+					new CamZoomOption('Toggle the camera zoom in-game.'),
+					new DFJKOption(),
+					new NotesOption(),
+					new Customizeption(),
+					new Judgement('Create a custom judgement preset'),
+					new Shouldcameramove('Moves camera on opponent/player note hits.'),
+				]),
+				new OptionCata(286, 40, 'Appearance', [
+					new NoteskinOption('Change your current noteskin'),
+					new AccTypeOption('Change your current accuracy type you want!'),
+					new IconBop('Change icon bopping type'),
+					new MiddleScrollOption('Put your lane in the center or on the right.'), 
+					new HideOppStrumsOption('Shows/Hides opponent strums on screen.(RESTART SONG)'),
+					new MissSoundsOption("Toggle miss sounds playing when you don't hit a note."),
+					new MissAnimsOption("Toggle miss animations playing when you don't hit a note."),
+					new ShowSplashes('Show particles on SICK hit.'),
+					new MicedUpSusOption('Enables filter like in MicedUp Engine.'),
+				   // new SustainsAlpha("Change Sustain Notes Alpha."),
+					new HealthBarOption('Toggles health bar visibility'),
+					new JudgementCounter("Show your judgements that you've gotten in the song"),
+					new LaneUnderlayOption('How transparent your lane is, higher = more visible.'),
+					new HideHud('Shows to you hud.'),
+					new ShowCombo('Combo sprite appearance.'),
+					new ScoreZoom("Zoom score on 2'nd beat."),
+					new HealthBarAlpha('Healthbar Transparceny.'),
+					new BlurNotes("(CONTAINS FPS ISSUES)/Make notes a bit 'blurred'."),
+					new TimeBarType("Change the song's current position bar."),
+				]),
+				new OptionCata(522, 40, 'Misc', [
+					new FlashingLightsOption('Toggle flashing lights that can cause epileptic seizures and strain.'),
+					new ColorBlindOption('You can set colorblind filter (makes the game more playable for colorblind people).'),
+					new FPSOption('Toggle the FPS Counter.'),
+					new MEMOption('Toggle the MEM Counter.'),
+					#if desktop
+					new FPSCapOption('Change your FPS Cap.'),
+					#end
+					new AutoPause('Stops game, when its unfocused'),
+					new AntialiasingOption('Toggle antialiasing, improving graphics quality at a slight performance penalty.'),
+					new QualityLow('Turn off some object on stages'),
+					new Imagepersist('Images loaded will stay in memory until the game is closed.'),
+					new GreenScreenMode('Makes screen green.'),
+					]),
+				new OptionCata(758, 40, 'Extra', [
+					new AutoSave('Turn AutoSaves your chating in Charting state.'),
+					new AutoSaveInt('Change Chart AutoSave Interval.'),
+					new SkipTitleOption('Skips TitleState.'),
+					new PauseCountDownOption("Toggle countdown after pressing 'Resume' in Pause Menu."),
+				]),
+				new OptionCata(994, 40, 'Language', [
+					new LangOption('Language.'),
+				]),
+				new OptionCata(-1, 125, "Editing Keybinds", [/* nothing here lol - PurSnake*/], true),
+	
+				new OptionCata(-1, 125, "Editing Judgements", [
+					new SickMSOption('How many milliseconds are in the SICK hit window'),
+					new GoodMsOption('How many milliseconds are in the GOOD hit window'),
+					new BadMsOption('How many milliseconds are in the BAD hit window'),
+				], true)
+			];
 
 		instance = this;
 
@@ -358,10 +359,13 @@ class OptionsMenu extends FlxSubState
 
 		if (!isInCat)
 		{
-			object.text = option.getValue();
+			//object.text = "> " + option.getValue();
 
-			descText.text = option.getDescription();
+			descText.text = Translation.string(option.getDescription(), 'OptionsMenu');
 		}
+		//Debug.logTrace("Changed opt: " + selectedOptionIndex);
+
+		//Debug.logTrace("Bounds: " + visibleRange[0] + "," + visibleRange[1]);
 	}
 
 	public static function openControllsState()
@@ -387,11 +391,12 @@ class OptionsMenu extends FlxSubState
 		super.update(elapsed);
 
 		for (c in options) {
-			c.titleObject.text = c.title;
+			c.titleObject.text = Translation.string(c.title, 'OptionsMenu');
 			for (o in 0...c.optionObjects.length) {
 				c.optionObjects.members[o].text = c.options[o].getValue();
 			}
 		}
+		descText.text = Translation.string(selectedOption.getDescription(), 'OptionsMenu');
 
 		if(FlxG.keys.justPressed.F11)
 			{
@@ -447,7 +452,7 @@ class OptionsMenu extends FlxSubState
 		{
 			if (isInCat)
 			{
-				descText.text = "Please select a category";
+			    descText.text = Translation.string('Please select a category','OptionsMenu');
 				if (right)
 				{
 					FlxG.sound.play(Paths.sound('scrollMenu'), 0.6);

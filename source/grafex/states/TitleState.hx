@@ -135,6 +135,8 @@ class TitleState extends MusicBeatState
 		FlxG.save.bind('grafex', 'xale');
 		ClientPrefs.loadPrefs();
 
+                Translation.checkLanguage();
+
 		Highscore.load();
 
         bgFlash = new FlxSprite(0, 0).loadGraphic(Paths.image('bgFlash'));

@@ -1,0 +1,83 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle-kal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				76,
+				-4
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left-kal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-133
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down-kal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				8,
+				120
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up-kal",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-14,
+				14
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right-kal",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Kalter-bar",
+	"position": [
+		0,
+		0
+	],
+	"healthbar_colors2": [
+		161,
+		161,
+		161
+	],
+	"healthicon": "face",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		100,
+		20
+	],
+	"sing_duration": 6.1,
+	"scale": 0.75
+}

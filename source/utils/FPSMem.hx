@@ -47,7 +47,7 @@ class FPSMem extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-                defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/vcr.ttf").fontName, 14, color);
+                defaultTextFormat = new TextFormat(openfl.utils.Assets.getFont("assets/fonts/VCR OSD Mono Cyr.ttf").fontName, 14, color);
 		width = 1280;
 		height = 720;
 
@@ -68,33 +68,34 @@ class FPSMem extends TextField
 	// Event Handlers
 	@:noCompletion
 	private #if !flash override #end function __enterFrame(d:Float):Void
-	{
-		currentTime = Timer.stamp();
-		var dt = currentTime-lastUpdate;
-		lastUpdate = currentTime;
-		times.push(currentTime);
-		while(times[0]<currentTime-1)
-			times.shift();
-
-		var currentCount = times.length;
-		currentFPS = currentCount;
-    currentMem = Math.round(System.totalMemory / (1e+6));
-
-		if (currentCount != cacheCount /*&& visible*/)
 		{
-                text = "";
-                   if(showFPS) {
-			   text += "FPS: " + currentFPS + "\n"; }
-                   if(showMem){
-				if(currentMem<0){
-        	                        text += "Memory: Leaking " + Math.abs(currentMem) + " MB\n";
-				}else{
-					text += "Memory: " + currentMem + " MB\n";
-				}
+			currentTime = Timer.stamp();
+			var dt = currentTime-lastUpdate;
+			lastUpdate = currentTime;
+			times.push(currentTime);
+			while(times[0]<currentTime-1)
+				times.shift();
+	
+			var currentCount = times.length;
+			currentFPS = currentCount;
+			currentMem = Math.round(System.totalMemory / (1e+6));
+	
+		  if (currentCount != cacheCount /*&& visible*/) {
+			text = "";
+			var s:String = 'FPSMem';
+			if(showFPS) {
+			   text += Translation.string("FPS", s) + ": " + currentFPS + "\n";
 			}
-		text += "Grafex Engine v. " + EngineData.grafexEngineVersion + "\n" ;
+			if(showMem) {
+				if(currentMem<0) {
+					text += Translation.string("Memory", s) + ": " + Translation.string("Leaking", s) + " " + Math.abs(currentMem) + " " + Translation.string("MB", s) + "\n";
+				} else {
+					text += Translation.string("Memory", s) + ": " + currentMem + " " + Translation.string("MB", s) + "\n";
+					}
+				}
+				//text += "Grafex Engine v. " + data.EngineData.grafexEngineVersion + "\n" ;
+			}
+	
+			cacheCount = currentCount;
 		}
-
-		cacheCount = currentCount;
-	}
 }

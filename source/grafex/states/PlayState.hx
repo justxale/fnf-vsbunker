@@ -1118,13 +1118,15 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
+		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 39, 400, "", 32);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
         timeTxt.borderSize = 2;
 		timeTxt.visible = showTime;
-		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
+		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 89;
+
+		if(ClientPrefs.middleScroll) timeTxt.x += FlxG.width / 3;
 
 		updateTime = showTime;
         laneunderlayOpponent = new FlxSprite(0, 0).makeGraphic(110 * 4 + 50, FlxG.height * 2);
@@ -1146,8 +1148,8 @@ class PlayState extends MusicBeatState
 		add(laneunderlay);
 
 		timeBarBG = new AttachedSprite('timeBar');
-		timeBarBG.x = timeTxt.x;
-		timeBarBG.y = timeTxt.y + (timeTxt.height / 4);
+		timeBarBG.x = timeTxt.x + 100;
+		timeBarBG.y = timeTxt.y + timeTxt.height;
 		timeBarBG.scrollFactor.set();
 		timeBarBG.alpha = 0;
 		timeBarBG.visible = showTime;
@@ -1354,35 +1356,38 @@ class PlayState extends MusicBeatState
 
 		reloadHealthBarColors();
 		
-        songTxt = new FlxText(12, healthBarBG.y + 50, 0, SONG.song + " (" + storyDifficultyText + ")", 18);
-		songTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT);
+		songTxt = new FlxText(healthBar.x - 205, healthBarBG.y - 75, 1000, SONG.song + " (" + storyDifficultyText + ")", 24);
+		songTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 24, FlxColor.WHITE, CENTER);
 		songTxt.setBorderStyle(OUTLINE, FlxColor.BLACK, 1.1);
         songTxt.borderSize = 1.2;
         songTxt.borderQuality = 1.5;
     	songTxt.scrollFactor.set();
+		songTxt.screenCenter(X);
 		if(ClientPrefs.hideHud || !ClientPrefs.songNameDisplay)
 			songTxt.visible = false;
 		add(songTxt); 
 
  
-        scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt = new FlxText(healthBar.x - 205, healthBarBG.y + 35, 1000, "", 18);
+		scoreTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 18, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);		
 		scoreTxt.scrollFactor.set();
-		scoreTxt.borderSize = 1.5;
+		scoreTxt.borderSize = 1.75;
 		scoreTxt.borderQuality = 2;
-		scoreTxt.visible = !ClientPrefs.hideHud;
+		scoreTxt.visible = (!ClientPrefs.hideHud && !cpuControlled);
 		add(scoreTxt);
 
-        judgementCounter = new FlxText(20, 0, 0, "", 20);
-		judgementCounter.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		judgementCounter = new FlxText(20, 20, 10000, "", 18);
+		judgementCounter.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 18, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		judgementCounter.borderSize = 1.5;
 		judgementCounter.borderQuality = 2;
 		judgementCounter.scrollFactor.set();
 		judgementCounter.cameras = [camHUD];
-		judgementCounter.screenCenter(Y);
+		judgementCounter.screenCenter(X);
 		var s:String = 'NotePressInfo';
-		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
-			
+		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo} | ' + Translation.string('Sicks', s) + ': ${sicks} | ' + Translation.string('Goods', s) + ': ${goods} | ' + Translation.string('Bads', s) + ': ${bads} | ' + Translation.string('Shits', s) + ': ${shits} | ' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' | ' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %';
+		
+		if(ClientPrefs.downScroll) judgementCounter.y = FlxG.height - 30;
+
 		if(ClientPrefs.showjud) 
         judgementCounter.visible = !ClientPrefs.hideHud;
         else
@@ -3156,7 +3161,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName;
 		
 		s = 'NotePressInfo';
-		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo} | ' + Translation.string('Sicks', s) + ': ${sicks} | ' + Translation.string('Goods', s) + ': ${goods} | ' + Translation.string('Bads', s) + ': ${bads} | ' + Translation.string('Shits', s) + ': ${shits} | ' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' | ' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %';
 
 		if(ratingName != '?')	
 		{
@@ -3164,7 +3169,7 @@ class PlayState extends MusicBeatState
 			scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;
 			
 			s = 'NotePressInfo';
-			judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+			judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo} | ' + Translation.string('Sicks', s) + ': ${sicks} | ' + Translation.string('Goods', s) + ': ${goods} | ' + Translation.string('Bads', s) + ': ${bads} | ' + Translation.string('Shits', s) + ': ${shits} | ' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' | ' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %';
 		
 		}
 
@@ -5339,11 +5344,11 @@ class PlayState extends MusicBeatState
 		                iconP2.updateHitbox();
 		                
 					case 'Grafex':
-								iconbop = 1.15;
-								iconP1.scale.x = 1;
-								iconP2.scale.y = 1;
-								FlxTween.tween(iconP1.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
-								FlxTween.tween(iconP2.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
+						iconbop = 1.15;
+						iconP1.scale.x = 1;
+						iconP2.scale.y = 1;
+						FlxTween.tween(iconP1.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
+						FlxTween.tween(iconP2.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
 							
 				}
 		
@@ -5351,7 +5356,7 @@ class PlayState extends MusicBeatState
 					{
 						scoreTxt.scale.x = 1;
 						scoreTxt.scale.y = 1;
-						FlxTween.tween(scoreTxt.scale, {x: 1.25, y: 1.15}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});               
+						FlxTween.tween(scoreTxt.scale, {x: 1.15, y: 1.075}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});             
 					}
 			
 		
@@ -5548,6 +5553,7 @@ class PlayState extends MusicBeatState
 					}
 			}
 
+			var s:String = 'Rating';
 			// Rating FC
 			ratingFC = "";
 			if (sicks > 0) ratingFC = Translation.string("SFC", s);

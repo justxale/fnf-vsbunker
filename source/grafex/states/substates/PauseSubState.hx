@@ -140,6 +140,8 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.updateHitbox();
 		add(levelDifficulty);
 
+		var s:String = 'PauseStateInfo';
+
 		blueballedTxt.text = Translation.string('Deaths', s) + ': ' + PlayState.deathCounter;
 		blueballedTxt.scrollFactor.set();
 		blueballedTxt.setFormat(Paths.font('VCR OSD Mono Cyr.ttf'), 32);

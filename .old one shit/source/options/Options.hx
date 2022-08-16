@@ -1947,32 +1947,7 @@ class LangOption extends Option
 		super();
 			description = desc;
 	}
-
-	/*public override function left():Bool
-	{
-		ClientPrefs.curLangNum--;
-		if (ClientPrefs.curLangNum < 0)
-		ClientPrefs.curLangNum = OptionsHelpers.LanguagesArray.length - 2;
-     OptionsHelpers.ChangeLang(ClientPrefs.curLangNum);
-		display = updateDisplay();
-		return true;
-	}
-
-	public override function right():Bool
-	{
-		ClientPrefs.curLangNum++;
-		if (ClientPrefs.curLangNum > OptionsHelpers.LanguagesArray.length - 1)
-			ClientPrefs.curLangNum = OptionsHelpers.LanguagesArray.length - 1;
-                  OptionsHelpers.ChangeLang(ClientPrefs.curLangNum);
-		display = updateDisplay();
-		return true;
-	}
-
-	public override function getValue():String
-	{
-		return "Language: < " + OptionsHelpers.getLangID(ClientPrefs.curLangNum) + " >";
-	}*/
-
+	
 	public override function left():Bool {
 		Translation.changeLanguage(1);
 		display = updateDisplay();

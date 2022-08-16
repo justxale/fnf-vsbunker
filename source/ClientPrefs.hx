@@ -40,6 +40,7 @@ class ClientPrefs {
 	public static var ratingSystem:String = 'Grafex';
 	public static var ratingSystemNum:Int = 0;
 	public static var songNameDisplay:Bool = true;
+	public static var curLanguage:String = 'English';
     public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var showFPS:Bool = true;
@@ -141,7 +142,7 @@ class ClientPrefs {
  		FlxG.save.data.susTransper = susTransper;
 		FlxG.save.data.songNameDisplay = songNameDisplay;
 		FlxG.save.data.vintageOnGame = vintageOnGame;
-
+		FlxG.save.data.curLanguage = Translation.languages[Translation.curLanguage].name;
  		FlxG.save.data.micedUpSus = micedUpSus;
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.countdownpause = countdownpause;
@@ -403,6 +404,12 @@ class ClientPrefs {
 			middleScroll = false;
 		}
 
+		if(FlxG.save.data.curLanguage != null) {
+			curLanguage = FlxG.save.data.curLanguage;
+		}
+		if(FlxG.save.data.curLanguage == null) {
+			curLanguage = "English";
+		}
 
 		if(FlxG.save.data.showFPS != null) {
 			showFPS = FlxG.save.data.showFPS;	

@@ -1,6 +1,6 @@
 package;
 
-import DialogueBoxPsych;
+import grafex.cutscenes.DialogueBoxPsych;
 import sys.FileSystem;
 import sys.io.File;
 import haxe.Json;
@@ -15,7 +15,7 @@ class Translation
 {
     public static var curLanguage:Int = 0;
     public static var languages:Array<Dynamic> = [
-        {name: 'English', prefix: '', translation: {}}
+        {name: 'English', prefix: '', characters: '', translation: {}}
     ];
     public static var curPrefix:String = '';
 

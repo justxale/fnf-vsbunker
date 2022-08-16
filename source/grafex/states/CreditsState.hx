@@ -90,7 +90,7 @@ class CreditsState extends MusicBeatState
 			['Yamahearted','bunker/Yama','Musician','https://www.youtube.com/Yamahearted','C549DB'],
 			['P4olka','bunker/P4olka','Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','f7a300'],
 			['JustXale','bunker/Xale','Lead Coder','https://github.com/JustXale','f7a300'],
-			['PurSnake','bunker/Snake','Charter','https://github.com/PurpleSSSnake','C549DB'],
+			['PurSnake','bunker/Snake','Charter, Translator/Second coder','https://github.com/PurpleSSSnake','C549DB'],
 			[''],
 			['Grafex Engine by'],
 		    ['JustXale','bunker/Xale','Developer of Grafex Engine','https://github.com/JustXale','f7a300'],

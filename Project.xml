@@ -90,6 +90,7 @@
 	</section>
 	<assets path='extra/readme.txt' rename='you MUST readme.txt' />
 	<assets path='versionCheck.txt' rename='localVersion.txt' />
+	<assets path='extra/birthday.png' rename='Happy Birthday Bunker.png'/>
 
 	<haxelib name="actuate" />
 

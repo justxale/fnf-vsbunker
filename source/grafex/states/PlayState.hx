@@ -675,11 +675,11 @@ class PlayState extends MusicBeatState
 				add(bg);
 
 			case 'tasm': // Wondertasm
-				var BG:BGSprite = new BGSprite('sonic', 0, 300, 1, 1);
+				var BG:BGSprite = new BGSprite('sonic', 0, 350, 1, 1);
 				BG.scale.set(1.5, 1.5);
 				add(BG);
 
-				anotherBG = new BGSprite('fleet', 0, 300, 1, 1);
+				anotherBG = new BGSprite('fleet', 0, 350, 1, 1);
 				anotherBG.visible = false;
 				anotherBG.scale.set(1.5, 1.5);
 				add(anotherBG);
@@ -692,7 +692,7 @@ class PlayState extends MusicBeatState
 				add(vintageWC);
 			
 			case 'mask':
-				var BG:BGSprite = new BGSprite('undertale', 0, 0, 1, 1);
+				var BG:BGSprite = new BGSprite('undertale', -50, 0, 1, 1);
 				add(BG);
 
 			/*case 'mall': //Week 5 - Cocoa, Eggnog

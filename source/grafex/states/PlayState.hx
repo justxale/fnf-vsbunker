@@ -1366,7 +1366,7 @@ class PlayState extends MusicBeatState
 
  
         scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.5;
 		scoreTxt.borderQuality = 2;
@@ -1374,14 +1374,16 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
         judgementCounter = new FlxText(20, 0, 0, "", 20);
-		judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		judgementCounter.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		judgementCounter.borderSize = 1.5;
 		judgementCounter.borderQuality = 2;
 		judgementCounter.scrollFactor.set();
 		judgementCounter.cameras = [camHUD];
 		judgementCounter.screenCenter(Y);
-		judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
-        if(ClientPrefs.showjud) 
+		var s:String = 'NotePressInfo';
+		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+			
+		if(ClientPrefs.showjud) 
         judgementCounter.visible = !ClientPrefs.hideHud;
         else
         judgementCounter.visible = false;
@@ -1389,8 +1391,8 @@ class PlayState extends MusicBeatState
 		add(judgementCounter);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "", 32);
-		botplayTxt.text = "BOTPLAY";
-		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		botplayTxt.text = Translation.string("BOTPLAY", 'BotplayText');
+		botplayTxt.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
 		botplayTxt.visible = cpuControlled;
@@ -3150,13 +3152,21 @@ class PlayState extends MusicBeatState
 
 		//healthThing.text = "Health: " + Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2)))) + '%';
 
-		scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
-		judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
+		var s:String = 'HealthBarInfo';
+		scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName;
+		
+		s = 'NotePressInfo';
+		judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+
 		if(ratingName != '?')	
 		{
-			scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
-			judgementCounter.text = 'Max Combo: ${maxCombo}\nSicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nAverage: ${Math.round(averageMs)}ms \nHealth: ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n game not read that text';
-        }
+			s = 'HealthBarInfo';
+			scoreTxt.text = Translation.string('Score', s) + ': ' + songScore + ' | ' + Translation.string('Misses', s) + ': ' + songMisses + ' | ' + Translation.string('Rating', s) + ': ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;
+			
+			s = 'NotePressInfo';
+			judgementCounter.text = Translation.string('Max Combo', s) + ': ${maxCombo}\n' + Translation.string('Sicks', s) + ': ${sicks}\n' + Translation.string('Goods', s) + ': ${goods}\n' + Translation.string('Bads', s) + ': ${bads}\n' + Translation.string('Shits', s) + ': ${shits}\n' + Translation.string('Average', s) + ': ${Math.round(averageMs)}' + Translation.string('ms', s) + ' \n' + Translation.string('Health', s) + ': ${Std.string(Math.floor(Std.parseFloat(Std.string((maxHealthProb) / 2))))} %\n ' + Translation.string('game not read that text', s);
+		
+		}
 
 		if(botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
@@ -5540,11 +5550,11 @@ class PlayState extends MusicBeatState
 
 			// Rating FC
 			ratingFC = "";
-			if (sicks > 0) ratingFC = "SFC";
-			if (goods > 0) ratingFC = "GFC";
-			if (bads > 0 || shits > 0) ratingFC = "FC";
-			if (songMisses > 0 && songMisses < 10) ratingFC = "SDCB";
-			else if (songMisses >= 10) ratingFC = "Clear";
+			if (sicks > 0) ratingFC = Translation.string("SFC", s);
+			if (goods > 0) ratingFC = Translation.string("GFC", s);
+			if (bads > 0 || shits > 0) ratingFC = Translation.string("FC", s);
+			if (songMisses > 0 && songMisses < 10) ratingFC = Translation.string("SDCB", s);
+			else if (songMisses >= 10) ratingFC = Translation.string("Clear", s);
 		}
 		setOnLuas('rating', ratingPercent);
 		setOnLuas('ratingName', ratingName);

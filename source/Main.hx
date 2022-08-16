@@ -163,6 +163,7 @@ class Main extends Sprite
 		initialState = TitleState;
 		#end
 
+		Translation.init();
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 

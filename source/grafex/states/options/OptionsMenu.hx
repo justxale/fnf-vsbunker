@@ -44,7 +44,7 @@ class OptionCata extends FlxSprite
 		title = _title;
 		middle = middleType;
 		if (!middleType)
-			makeGraphic(295, 64, FlxColor.BLACK);
+			makeGraphic(236, 64, FlxColor.BLACK);
 		alpha = 0.4;
 
 		options = _options;
@@ -52,7 +52,7 @@ class OptionCata extends FlxSprite
 		optionObjects = new FlxTypedGroup();
 
 		titleObject = new FlxText((middleType ? 1180 / 2 : x), y + (middleType ? 0 : 16), 0, title);
-		titleObject.setFormat(Paths.font("vcr.ttf"), 35, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		titleObject.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 35, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		titleObject.borderSize = 3;
 
 		if (middleType)
@@ -74,7 +74,7 @@ class OptionCata extends FlxSprite
 			{
 				text.screenCenter(X);
 			}
-			text.setFormat(Paths.font("vcr.ttf"), 35, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			text.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 35, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			text.borderSize = 3;
 			text.borderQuality = 1;
 			text.scrollFactor.set();
@@ -84,7 +84,7 @@ class OptionCata extends FlxSprite
 
 	public function changeColor(color:FlxColor)
 	{
-		makeGraphic(295, 64, color);
+		makeGraphic(236, 64, color);
 	}
 }
 
@@ -245,7 +245,7 @@ class OptionsMenu extends FlxSubState
 
 		for (i in 0...options.length - 1)
 		{
-			if (i >= 4)
+			if (i >= 5)
 				continue;
 			var cat = options[i];
 			add(cat);
@@ -253,7 +253,7 @@ class OptionsMenu extends FlxSubState
 		}
 
 		descText = new FlxText(62, 648);
-		descText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		descText.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		descText.borderSize = 2;
 
 		add(descBack);
@@ -266,7 +266,7 @@ class OptionsMenu extends FlxSubState
 		selectedOption = selectedCat.options[0];
 
 		restoreSettingsText = new FlxText (62, 680, FlxG.width, 'Press DELETE to reset settings');
-		restoreSettingsText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		restoreSettingsText.setFormat(Paths.font("VCR OSD Mono Cyr.ttf"), 20, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		restoreSettingsText.scrollFactor.set();
 		restoreSettingsText.borderSize = 2;
 		restoreSettingsText.borderQuality = 3;

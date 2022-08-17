@@ -84,11 +84,12 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['vs Bunker Team'], 
 			['WonderNope','bunker/Wonder',"Bunker Discord Server's Owner",'https://www.youtube.com/channel/UC2v3lZHoWcm6g9SbiBT2PKQ','f7a300'],
-			['Kalter','bunker/Kalter','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','f7a300'],
+			['Kalter','bunker/Kaler','Director','https://youtube.com/channel/UC6b-8cSsPaIjSm34VEeNGSw','f7a300'],
 			['Nemolevich','bunker/sponsors/nemolevich','Co-director, Scriptwriter, Sponsor ','','f7a300'],
-			['WHO','bunker/PeePeePooPoo','Lead Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
+			['Dyron','bunker/PeePeePooPoo','Lead Musician, Animator','https://twitter.com/RanMal300','fe3e3c'],
 			['Yamahearted','bunker/Yama','Musician','https://www.youtube.com/Yamahearted','C549DB'],
-			['P4olka','bunker/P4olka','Lead Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','f7a300'],
+			['KerSive','bunker/kersive','Artist','','fe3e3c'],
+			['ToxMiha','bunker/toxmiha','Animator','','fe3e3c'],
 			['JustXale','bunker/Xale','Lead Coder','https://github.com/JustXale','f7a300'],
 			['PurSnake','bunker/Snake','Charter, Coder','https://github.com/PurpleSSSnake','C549DB'],
 			[''],
@@ -107,12 +108,16 @@ class CreditsState extends MusicBeatState
 			['Nemolevich','bunker/sponsors/nemolevich',' Co-Director, Sponsor','', 'a6a6a6'],
 			['Niframo',   'bunker/sponsors/niframo','Sponsor','', '67d233'],
 			['Varan',     'bunker/sponsors/varan','Sponsor','', 'c2c2c2'],
+			['Azizoni', null, 'Sponsor','', '7d0627'],
+			['Tort Odinovich',   null,'Sponsor','', 'FADC45'],
+			['Moxxie',   null,'Sponsor','', 'fe6165'],
 			[''],
             ['With thanks to'],
 			//['LenyaTheCat','lenya','Grafex Icons Artist','https://youtube.com/channel/UCMQ8ExqI_qKt8a6OrhHGkbQ', 'ffffff'],
-			['NotGeorg','','Grafex Arrows Skin Artist','https://twitter.com/VolkovGeorg', '919191'],
-			['Himdish','bunker/Himdish','Ex-Artist','https://github.com/JustXale','f7a300'],
+			['NotGeorg', null ,'Grafex Arrows Skin Artist','https://twitter.com/VolkovGeorg', '919191'],
+			['Himdish','bunker/Himdish','Ex-Artist','https://github.com/JustXale','376a1e'],
 			['SlavRei','bunker/SlavRei','Ex-Artist','https://github.com/JustXale','f7a300'],
+			['P4olka','bunker/P4olka','Ex-Artist','https://twitter.com/PT4OLKA?t=xdirWVjgf66T7orVb-_ypQ&s=09','f7a300'],
 			['TeaMushroom','bunker/Mashroom','Ex-Animator','https://github.com/JustXale','f7a300'],
             [''],
 			['Psych Engine Team'],
@@ -164,13 +169,17 @@ class CreditsState extends MusicBeatState
 					Paths.currentModDirectory = creditsStuff[i][5];
 				}
 
-				var icon:AttachedSprite = new AttachedSprite('credits/' + creditsStuff[i][1]);
-				icon.xAdd = optionText.width + 10;
-				icon.sprTracker = optionText;
-	
-				// using a FlxGroup is too much fuss!
-				iconArray.push(icon);
-				add(icon);
+				if(creditsStuff[i][1] != null)
+				{
+					var icon:AttachedSprite = new AttachedSprite('credits/' + creditsStuff[i][1]);
+					icon.xAdd = optionText.width + 10;
+					icon.sprTracker = optionText;
+					
+					// using a FlxGroup is too much fuss!
+					iconArray.push(icon);
+					add(icon);
+				}
+				
 				Paths.currentModDirectory = '';
 
 				if(curSelected == -1) curSelected = i;

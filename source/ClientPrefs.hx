@@ -9,10 +9,10 @@ import Controls;
 import utils.FPSMem;
 
 class ClientPrefs {
-	public static var vintageOnGame:Bool = true;
+	public static var vintageOnGame:Bool = false;
     public static var playmisssounds:Bool = true;
 	public static var playmissanims:Bool = true;
-	public static var countdownpause:Bool = true;
+	public static var countdownpause:Bool = false;
     public static var greenscreenmode:Bool = false;
     public static var hitsound:Bool = false;
     public static var shouldcameramove:Bool = true;
@@ -20,13 +20,13 @@ class ClientPrefs {
     public static var instantRespawn:Bool = false;
     public static var hliconbop:String = 'Modern';
     public static var hliconbopNum:Int = 1;
-    public static var underdelayalpha:Float = 0.1;
+    public static var underdelayalpha:Float = 0;
     public static var underdelayonoff:Bool = true;
     public static var noteSkin:String = 'Default';
     public static var noteSkinNum:Int = 0;
     public static var autoPause:Bool = false;
-    public static var showjud:Bool = true;
-    public static var showCombo:Bool = true;
+    public static var showjud:Bool = false;
+    public static var showCombo:Bool = false;
     public static var blurNotes:Bool = false;
 	public static var visibleHealthbar:Bool = true;
 	public static var ColorBlindType:String = 'None';
@@ -35,11 +35,11 @@ class ClientPrefs {
 	public static var chartautosaveInterval:Int = 5;
 	public static var chartautosave:Bool = true;
     public static var skipTitleState:Bool = false;
-    public static var micedUpSus:Bool = true;
+    public static var micedUpSus:Bool = false;
     public static var susTransper:Float = 1;
 	public static var ratingSystem:String = 'Grafex';
 	public static var ratingSystemNum:Int = 0;
-	public static var songNameDisplay:Bool = true;
+	public static var songNameDisplay:Bool = false;
 	public static var curLanguage:String = 'English';
     public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
@@ -203,7 +203,7 @@ class ClientPrefs {
 		}
 
 		if(FlxG.save.data.micedUpSus == null) {
-			micedUpSus = true;
+			micedUpSus = false;
 		}
 
 		if(FlxG.save.data.vintageOnGame != null) {
@@ -211,7 +211,7 @@ class ClientPrefs {
 		}
 
 		if(FlxG.save.data.vintageOnGame == null) {
-			vintageOnGame = true;
+			vintageOnGame = false;
 		}
 
 		if(FlxG.save.data.ColorBlindType != null) {
@@ -291,7 +291,7 @@ class ClientPrefs {
 		}	
 
         if(FlxG.save.data.countdownpause == null) {
-	        countdownpause = true;
+	        countdownpause = false;
 		}
 
 		if(FlxG.save.data.noteSkin != null) {
@@ -319,7 +319,7 @@ class ClientPrefs {
 		}
 
 		if(FlxG.save.data.showjud == null) {
-			showjud = true;
+			showjud = false;
 		}
 
         if(FlxG.save.data.showjud != null) {
@@ -327,7 +327,7 @@ class ClientPrefs {
 		}
 
         if(FlxG.save.data.showCombo == null) {
-			showCombo = true;
+			showCombo = false;
 		}
 
         if(FlxG.save.data.showCombo != null) {
@@ -577,7 +577,7 @@ class ClientPrefs {
 		}
 
 		if(FlxG.save.data.underdelayalpha == null) {
-			underdelayalpha = 0.2;
+			underdelayalpha = 0;
 		}
 
     	if(FlxG.save.data.underdelayonoff != null) {
@@ -640,7 +640,7 @@ class ClientPrefs {
 
 		if (FlxG.save.data.songNameDisplay == null)
 		{
-			songNameDisplay = true;
+			songNameDisplay = false;
 		}
 		
 		if(FlxG.save.data.volume != null)

@@ -49,7 +49,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-        #if MODS_ALLOWED 'mods', #end
+        //#if MODS_ALLOWED 'mods', #end
 		'credits',
 		//#if !switch 'donate', #end // you can uncomment this if you want - Xale
 		'options'

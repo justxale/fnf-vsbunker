@@ -670,9 +670,21 @@ class PlayState extends MusicBeatState
 				add(stones);
 
 			case 'bar': //Week 2
-				var bg:BGSprite = new BGSprite('bar', -200, -200, 1, 1, null, null);
-				bg.scale.set(1.3, 1.3);
+				var bg:BGSprite = new BGSprite('Megafon', -675, -325, 0.1, 0.1);
+				bg.scale.set(0.6, 0.6);
 				add(bg);
+				var bartable:BGSprite = new BGSprite('Bartable', 1126, 339, 0.08, 0.1);
+				add(bartable);
+				var cables:BGSprite = new BGSprite('Provoda', -620, -405, 0.1, 0.05);
+				cables.scale.set(0.57, 0.57);
+				add(cables);
+				var tube:BGSprite = new BGSprite('Truba', -790, 717, 0.2, 0.15);
+				tube.scale.set(0.6, 0.6);
+				add(tube);
+				var light:BGSprite = new BGSprite('Light', -570, -315, 0, 0);
+				light.alpha = 0.2;
+				light.scale.set(0.55, 0.55);
+				add(light);
 
 			case 'tasm': // Wondertasm
 				var BG:BGSprite = new BGSprite('sonic', 0, 320, 1, 1);
@@ -2909,7 +2921,7 @@ class PlayState extends MusicBeatState
 			switch(curStage)
 			{
 				case 'bar':
-					camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal)/* + 100*/, FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal)/* - 100*/);
+					camFollowPos.setPosition(/*FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal) FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal) 100*/400, 400);
 
 				default:
 					camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
